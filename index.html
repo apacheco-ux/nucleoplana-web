@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -763,24 +763,24 @@ footer {
       <p class="section-lead reveal" style="margin:0 auto 0">
         Primera consulta sin compromiso. Analizamos tu situación y te decimos qué impacto podemos tener en tu negocio.
       </p>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)" action="https://formspree.io/f/xkovlyja" method="POST">
         <div class="form-row">
           <div class="field">
             <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre" required>
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="field">
             <label>Email</label>
-            <input type="email" placeholder="tu@email.com" required>
+            <input type="email" name="email" placeholder="tu@email.com" required>
           </div>
         </div>
         <div class="field">
           <label>Tipo de comercio</label>
-          <input type="text" placeholder="Ej: Frutería, farmacia, deportes...">
+          <input type="text" name="tipo_comercio" placeholder="Ej: Frutería, farmacia, deportes...">
         </div>
         <div class="field">
           <label>Mensaje</label>
-          <textarea placeholder="Cuéntanos sobre tu negocio y qué quieres mejorar..."></textarea>
+          <textarea name="mensaje" placeholder="Cuéntanos sobre tu negocio y qué quieres mejorar..."></textarea>
         </div>
         <div class="form-submit">
           <button type="submit" class="btn-primary" style="border:none;cursor:pointer">Enviar mensaje →</button>
@@ -800,7 +800,7 @@ footer {
     <a href="#contacto">Contacto</a>
   </div>
 </footer>
- 
+
 <script>
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
