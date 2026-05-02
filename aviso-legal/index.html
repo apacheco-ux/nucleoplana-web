@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aviso Legal — Núcleo Plana</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-:root{--navy:#0B1A38;--cyan:#00C2D4;--cyan2:#00E8FF;--white:#F0F4FF;--gray:#8899BB;--dark:#060E1F;}
-body{font-family:'DM Sans',sans-serif;font-weight:300;color:#333;background:#fff;line-height:1.7;}
-nav{background:var(--navy);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--white);letter-spacing:1px;text-decoration:none;}
-.nav-logo span{color:var(--cyan);}
-.nav-back{color:var(--cyan);text-decoration:none;font-size:.9rem;transition:color .2s;}
-.nav-back:hover{color:var(--cyan2);}
-.legal-wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px;}
-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);margin-bottom:6px;}
-.updated{color:#999;font-size:.82rem;margin-bottom:48px;}
-h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);margin:36px 0 10px;border-left:3px solid var(--cyan);padding-left:12px;letter-spacing:.3px;}
-p,li{font-size:.95rem;color:#444;margin-bottom:10px;line-height:1.75;}
-ul{padding-left:22px;margin-bottom:14px;}
-li{margin-bottom:6px;}
-a{color:var(--cyan);text-decoration:none;}
-a:hover{text-decoration:underline;}
-strong{color:#333;font-weight:500;}
-footer{background:var(--dark);padding:28px 24px;text-align:center;border-top:1px solid rgba(0,194,212,.1);}
-footer p{font-size:.85rem;color:var(--gray);}
-footer a{color:var(--cyan);}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviso legal | Núcleo Plana</title>
+  <meta name="description" content="Aviso legal de Núcleo Plana.">
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 250, 242, 0.94);
+      --ink: #16241d;
+      --muted: #546259;
+      --line: rgba(22, 36, 29, 0.12);
+      --brand: #d8652e;
+      --shadow: 0 18px 40px rgba(22, 36, 29, 0.10);
+      --radius: 24px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #faf6ee 0%, var(--bg) 100%);
+    }
+    a { color: var(--brand); text-decoration: none; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid rgba(22, 36, 29, 0.08);
+      background: rgba(250, 246, 238, 0.88);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      font-family: Arial, sans-serif;
+    }
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .legal-section { padding: 56px 0; }
+    .legal-wrap {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    h1, h2 {
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+    h1 { margin: 0 0 18px; font-size: clamp(2.3rem, 4vw, 4rem); }
+    h2 { margin: 26px 0 10px; font-size: 1.45rem; }
+    p, li {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    ul { margin: 10px 0 0; padding-left: 20px; }
+  </style>
 </head>
-<body>
-<nav>
-  <a href="https://nucleoplana.es" class="nav-logo">NÚ<span>CLEO</span>.ES</a>
-  <a href="https://nucleoplana.es" class="nav-back">← Volver al inicio</a>
-</nav>
+<body class="legal-body">
+  <header class="topbar">
+    <div class="shell nav">
+      <div class="brand">Núcleo Plana</div>
+      <a href="/">Volver al inicio</a>
+    </div>
+  </header>
 
-<div class="legal-wrap">
-  <h1>Aviso Legal</h1>
-  <p class="updated">Última actualización: marzo de 2025</p>
+  <section class="legal-section">
+    <div class="shell">
+      <article class="legal-wrap">
+        <h1>Aviso legal</h1>
+        <p>Este documento es una base editable para publicar la web con una capa legal visible. Antes de publicar, debes sustituir los campos marcados por los datos reales del titular del sitio.</p>
 
-  <h2>1. Datos identificativos</h2>
-  <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p>
-  <ul>
-    <li><strong>Denominación social:</strong> Núcleo Plana</li>
-    <li><strong>Actividad:</strong> Consultoría e inteligencia operativa para comercio físico</li>
-    <li><strong>Domicilio:</strong> Castellón de la Plana, España</li>
-    <li><strong>Correo electrónico:</strong> <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></li>
-    <li><strong>Sitio web:</strong> <a href="https://nucleoplana.es">nucleoplana.es</a></li>
-  </ul>
+        <h2>1. Titular del sitio web</h2>
+        <p>Titular: [Nombre o razón social]</p>
+        <p>NIF/CIF: [Dato pendiente de completar]</p>
+        <p>Domicilio: [Dirección pendiente de completar]</p>
+        <p>Email de contacto: <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></p>
 
-  <h2>2. Condiciones de uso</h2>
-  <p>El acceso y la navegación por este sitio web implican la aceptación plena y sin reservas de las presentes condiciones legales. El usuario se compromete a hacer un uso lícito y adecuado de los contenidos y servicios, y a no emplearlos para actividades ilícitas, contrarias a la buena fe o al orden público.</p>
-  <p>Núcleo Plana se reserva el derecho a modificar unilateralmente, en cualquier momento y sin previo aviso, la presentación y configuración del sitio web, así como las presentes condiciones de uso.</p>
+        <h2>2. Objeto</h2>
+        <p>El presente sitio web tiene como finalidad ofrecer información sobre los servicios de Núcleo Plana relacionados con inteligencia operativa, analítica y visión computacional aplicada al comercio físico.</p>
 
-  <h2>3. Propiedad intelectual e industrial</h2>
-  <p>Todos los contenidos del sitio web —incluyendo, sin carácter limitativo, textos, fotografías, gráficos, imágenes, iconos, tecnología, software, código fuente, diseño gráfico y demás elementos— son propiedad de Núcleo Plana o de terceros que han autorizado expresamente su uso, y están protegidos por la legislación española e internacional de propiedad intelectual e industrial.</p>
-  <p>Queda estrictamente prohibida la reproducción total o parcial, distribución, comunicación pública, transformación o cualquier otro acto de explotación de dichos contenidos sin autorización escrita de Núcleo Plana.</p>
+        <h2>3. Condiciones de uso</h2>
+        <p>El acceso a esta web atribuye la condición de usuario e implica la aceptación de las presentes condiciones. El usuario se compromete a hacer un uso adecuado de los contenidos y a no utilizarlos para actividades ilícitas o contrarias a la buena fe.</p>
 
-  <h2>4. Exclusión de responsabilidad</h2>
-  <p>Núcleo Plana no garantiza la ausencia de virus u otros elementos en los contenidos que puedan provocar alteraciones en los sistemas informáticos. Asimismo, no se hace responsable de los daños o perjuicios que pudieran derivarse de:</p>
-  <ul>
-    <li>El uso incorrecto de la información publicada en el sitio web.</li>
-    <li>Interrupciones del servicio por causas técnicas ajenas a su control.</li>
-    <li>El contenido de sitios web de terceros enlazados desde este sitio.</li>
-  </ul>
+        <h2>4. Propiedad intelectual e industrial</h2>
+        <p>Los contenidos, textos, diseños, logotipos, código y demás elementos del sitio están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción total o parcial sin autorización expresa del titular.</p>
 
-  <h2>5. Política de enlaces</h2>
-  <p>Este sitio web puede contener enlaces a páginas de terceros. Núcleo Plana no controla ni se responsabiliza del contenido, las políticas de privacidad ni las prácticas de dichos sitios. La inclusión de cualquier enlace no implica recomendación ni asociación.</p>
+        <h2>5. Responsabilidad</h2>
+        <p>El titular no se hace responsable del mal uso de los contenidos de la web ni de los daños derivados del acceso o uso del sitio cuando estos provengan de causas ajenas a su control razonable.</p>
 
-  <h2>6. Ley aplicable y jurisdicción</h2>
-  <p>Las presentes condiciones legales se rigen e interpretan conforme a la legislación española. Para la resolución de cualquier controversia o conflicto que pudiera derivarse del acceso o uso de este sitio web, las partes se someten expresamente a la jurisdicción de los Juzgados y Tribunales de Castellón de la Plana, con renuncia a cualquier otro fuero que pudiera corresponderles.</p>
-</div>
+        <h2>6. Enlaces externos</h2>
+        <p>En caso de incluir enlaces a sitios de terceros, el titular no asume responsabilidad sobre los contenidos, políticas o prácticas de dichos sitios externos.</p>
 
-<footer>
-  <p><strong style="color:var(--white);">Núcleo Plana</strong> · Inteligencia operativa para comercio físico · Castellón</p>
-  <p style="margin-top:6px;"><a href="https://nucleoplana.es">nucleoplana.es</a> · <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></p>
-  <p style="margin-top:10px;font-size:.8rem;">© 2025 Núcleo Plana · <a href="/aviso-legal">Aviso legal</a> · <a href="/privacidad">Privacidad</a></p>
-</footer>
+        <h2>7. Legislación aplicable</h2>
+        <p>La relación entre el titular y el usuario se regirá por la normativa española vigente. Para cualquier controversia que pudiera derivarse del acceso o uso de la web, ambas partes se someterán a los juzgados y tribunales que correspondan conforme a la legislación aplicable.</p>
+      </article>
+    </div>
+  </section>
 </body>
 </html>
