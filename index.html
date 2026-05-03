@@ -5,20 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Núcleo Plana | Inteligencia operativa para comercio físico</title>
   <meta name="description" content="Detecta merma, zonas muertas y oportunidades de conversión en tu negocio con visión computacional orientada a resultados. Diagnóstico inicial gratuito en Castellón y Valencia.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nucleoplana.es/">
+  <meta property="og:title" content="Núcleo Plana | Inteligencia operativa para comercio físico">
+  <meta property="og:description" content="Detecta merma, zonas muertas y oportunidades de conversión en tu negocio con visión computacional orientada a resultados. Diagnóstico inicial gratuito en Castellón y Valencia.">
+  <meta property="og:url" content="https://nucleoplana.es/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4efe6;
-      --paper: #fffaf2;
-      --paper-strong: #fffdf8;
-      --ink: #16241d;
-      --muted: #546259;
-      --line: rgba(22, 36, 29, 0.12);
-      --brand: #d8652e;
-      --brand-dark: #a8471b;
-      --accent: #1f6a5d;
-      --accent-soft: #dff1eb;
-      --warn: #fff0de;
-      --shadow: 0 18px 40px rgba(22, 36, 29, 0.10);
+      --bg: #07101c;
+      --paper: rgba(9, 23, 43, 0.78);
+      --paper-strong: rgba(11, 29, 54, 0.94);
+      --ink: #eef5ff;
+      --muted: #9caec6;
+      --line: rgba(128, 184, 255, 0.16);
+      --brand: #4aa8ff;
+      --brand-dark: #2388e8;
+      --accent: #90d6ff;
+      --accent-soft: rgba(74, 168, 255, 0.14);
+      --warn: rgba(12, 35, 66, 0.66);
+      --shadow: 0 20px 54px rgba(0, 0, 0, 0.36);
+      --glow: 0 0 0 1px rgba(144, 214, 255, 0.05), 0 24px 64px rgba(3, 10, 20, 0.46);
       --radius: 24px;
       --radius-sm: 18px;
       --max: 1180px;
@@ -35,11 +46,26 @@
     body {
       margin: 0;
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Manrope", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(216, 101, 46, 0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(31, 106, 93, 0.14), transparent 24%),
-        linear-gradient(180deg, #faf6ee 0%, var(--bg) 100%);
+        radial-gradient(circle at 12% 10%, rgba(62, 166, 255, 0.28), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(87, 122, 255, 0.22), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(53, 193, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, #081321 0%, #07101c 58%, #040a14 100%);
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(127, 211, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 211, 255, 0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 36%, transparent 85%);
+      opacity: 0.22;
     }
 
     a {
@@ -61,9 +87,9 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      border-bottom: 1px solid rgba(22, 36, 29, 0.08);
-      backdrop-filter: blur(14px);
-      background: rgba(250, 246, 238, 0.84);
+      border-bottom: 1px solid rgba(127, 211, 255, 0.1);
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 26, 0.78);
     }
 
     .nav {
@@ -75,9 +101,10 @@
     }
 
     .brand {
-      font-size: 1.02rem;
+      font-family: "Fraunces", serif;
+      font-size: 1.08rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
@@ -87,16 +114,17 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      font-family: Arial, sans-serif;
+      gap: 22px;
+      font-family: "Manrope", sans-serif;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
+      font-weight: 500;
     }
 
     .nav-links a:hover,
     .footer-links a:hover,
     .mini-links a:hover {
-      color: var(--brand-dark);
+      color: var(--accent);
     }
 
     .nav-cta,
@@ -105,36 +133,45 @@
       align-items: center;
       justify-content: center;
       min-height: 52px;
-      padding: 14px 22px;
+      padding: 14px 24px;
       border-radius: 999px;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       font-weight: 700;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
     }
 
     .nav-cta {
-      background: var(--ink);
-      color: #fff;
+      background: linear-gradient(135deg, #58afff 0%, #77d8ff 100%);
+      color: #04111f;
+      box-shadow: 0 10px 28px rgba(62, 166, 255, 0.24);
     }
 
     .button:hover,
     .nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(22, 36, 29, 0.14);
+      box-shadow: 0 16px 32px rgba(10, 133, 255, 0.16);
     }
 
     .button-primary {
-      background: var(--brand);
-      color: #fff;
+      background: linear-gradient(135deg, #58afff 0%, #7bd7ff 100%);
+      color: #04111f;
+      box-shadow: 0 14px 30px rgba(62, 166, 255, 0.22);
     }
 
     .button-primary:hover {
-      background: var(--brand-dark);
+      background: linear-gradient(135deg, var(--brand-dark) 0%, #5dceff 100%);
     }
 
     .button-secondary {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(127, 211, 255, 0.14);
+      background: rgba(7, 20, 38, 0.48);
+      color: var(--ink);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(127, 211, 255, 0.32);
+      background: rgba(9, 28, 50, 0.68);
     }
 
     .hero {
@@ -157,7 +194,7 @@
     .hero-grid {
       grid-template-columns: 1.08fr 0.92fr;
       align-items: stretch;
-      gap: 34px;
+      gap: 40px;
     }
 
     .eyebrow,
@@ -166,19 +203,20 @@
       align-items: center;
       gap: 10px;
       width: fit-content;
-      padding: 9px 14px;
-      border: 1px solid rgba(22, 36, 29, 0.10);
+      padding: 9px 15px;
+      border: 1px solid rgba(127, 211, 255, 0.16);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(8, 23, 42, 0.46);
       color: var(--muted);
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.88rem;
+      backdrop-filter: blur(12px);
     }
 
     .mini-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
     }
@@ -189,13 +227,15 @@
     .contact-card h2,
     .legal-wrap h1 {
       margin: 18px 0 16px;
-      line-height: 0.94;
-      letter-spacing: -0.05em;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
     }
 
     .hero-copy h1 {
       max-width: 10ch;
-      font-size: clamp(2.9rem, 5.8vw, 5.8rem);
+      font-family: "Fraunces", serif;
+      font-size: clamp(3rem, 5.5vw, 5.7rem);
+      font-weight: 700;
     }
 
     .hero-copy p,
@@ -208,8 +248,8 @@
     .legal-wrap p,
     .legal-wrap li {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
+      font-family: "Manrope", sans-serif;
+      line-height: 1.78;
       color: var(--muted);
     }
 
@@ -237,16 +277,17 @@
     .form-card,
     .cta-card,
     .legal-wrap {
-      border: 1px solid rgba(22, 36, 29, 0.10);
+      border: 1px solid rgba(127, 211, 255, 0.12);
       border-radius: var(--radius);
-      background: rgba(255, 250, 242, 0.86);
-      box-shadow: var(--shadow);
+      background: var(--paper);
+      box-shadow: var(--glow);
+      backdrop-filter: blur(16px);
     }
 
     .point {
       padding: 18px;
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.52);
+      background: rgba(8, 21, 39, 0.52);
       box-shadow: none;
     }
 
@@ -254,20 +295,22 @@
     .stat strong {
       display: block;
       margin-bottom: 8px;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       color: var(--ink);
     }
 
     .hero-card {
       position: relative;
       overflow: hidden;
-      padding: 28px;
+      padding: 30px;
       display: grid;
-      gap: 18px;
-      border: 1px solid rgba(22, 36, 29, 0.10);
+      gap: 20px;
+      border: 1px solid rgba(127, 211, 255, 0.12);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255, 253, 248, 0.94) 0%, rgba(247, 241, 231, 0.92) 100%);
-      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(10, 28, 52, 0.96) 0%, rgba(8, 20, 39, 0.94) 100%);
+      box-shadow: var(--glow);
     }
 
     .hero-card::after {
@@ -275,10 +318,11 @@
       position: absolute;
       right: -40px;
       bottom: -40px;
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      background: rgba(216, 101, 46, 0.14);
+      background: rgba(62, 166, 255, 0.14);
+      filter: blur(8px);
     }
 
     .score {
@@ -289,9 +333,9 @@
     }
 
     .score-box {
-      padding: 18px;
+      padding: 20px;
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.04);
       box-shadow: none;
     }
 
@@ -317,7 +361,7 @@
     .cta-copy h2,
     .contact-card h2,
     .legal-wrap h1 {
-      font-size: clamp(2.1rem, 4vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3.7rem);
     }
 
     .problem-grid,
@@ -331,7 +375,7 @@
     .section-card,
     .proof,
     .faq-item {
-      padding: 24px;
+      padding: 28px;
     }
 
     .section-card h3,
@@ -339,8 +383,10 @@
     .faq-item h3,
     .contact-card h3 {
       margin: 0 0 12px;
-      font-size: 1.35rem;
-      line-height: 1.18;
+      font-family: "Fraunces", serif;
+      font-size: 1.24rem;
+      line-height: 1.22;
+      font-weight: 600;
     }
 
     .step-no {
@@ -353,19 +399,19 @@
       border-radius: 50%;
       background: var(--accent-soft);
       color: var(--accent);
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       font-weight: 700;
     }
 
     .proof {
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(8, 27, 48, 0.62);
     }
 
     .proof strong {
-      color: var(--brand-dark);
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       font-size: 0.8rem;
     }
 
@@ -374,31 +420,33 @@
       padding: 16px 18px;
       border-radius: var(--radius-sm);
       background: var(--warn);
-      border: 1px solid rgba(216, 101, 46, 0.18);
-      font-family: Arial, sans-serif;
+      border: 1px solid rgba(127, 211, 255, 0.16);
+      font-family: "Manrope", sans-serif;
       line-height: 1.6;
-      color: #6a4428;
+      color: #d3e9ff;
     }
 
     .cta-card {
-      padding: 34px;
+      padding: 40px;
       display: grid;
-      gap: 24px;
-      background: linear-gradient(135deg, #16352d 0%, #214b40 54%, #2b6252 100%);
-      color: #fff7ec;
+      gap: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 30%),
+        linear-gradient(135deg, #08182e 0%, #0a2140 52%, #0f315f 100%);
+      color: #edf7ff;
     }
 
     .cta-copy p,
     .cta-card .stat {
-      color: rgba(255, 247, 236, 0.86);
+      color: rgba(225, 241, 255, 0.84);
     }
 
     .stats .stat {
       padding: 18px;
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-family: Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(127, 211, 255, 0.12);
+      font-family: "Manrope", sans-serif;
       line-height: 1.6;
     }
 
@@ -418,7 +466,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px 18px;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--muted);
     }
 
@@ -447,7 +495,7 @@
     label {
       display: grid;
       gap: 8px;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       font-size: 0.96rem;
       color: var(--ink);
     }
@@ -457,7 +505,7 @@
     textarea {
       width: 100%;
       padding: 14px 16px;
-      border: 1px solid rgba(22, 36, 29, 0.14);
+      border: 1px solid rgba(127, 211, 255, 0.18);
       border-radius: 14px;
       background: var(--paper-strong);
       color: var(--ink);
@@ -475,9 +523,9 @@
       gap: 12px;
       padding: 14px 16px;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(22, 36, 29, 0.10);
-      font-family: Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(127, 211, 255, 0.12);
+      font-family: "Manrope", sans-serif;
       color: var(--muted);
       line-height: 1.6;
       font-size: 0.92rem;
@@ -490,7 +538,7 @@
     }
 
     .footnote {
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.6;
@@ -507,7 +555,7 @@
 
     .footer-grid p {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--muted);
       line-height: 1.7;
     }
@@ -528,7 +576,7 @@
 
     .legal-wrap {
       padding: 34px;
-      background: rgba(255, 250, 242, 0.94);
+      background: rgba(9, 24, 44, 0.92);
     }
 
     .legal-grid {
@@ -614,7 +662,7 @@
         <a href="#casos">Casos reales</a>
         <a href="#faq">Preguntas frecuentes</a>
         <a href="#contacto">Contacto</a>
-        <a href="https://nucleoplana.es/blog/" target="_blank" rel="noreferrer">Blog</a>
+        <a href="https://nucleoplana.es/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
       </nav>
       <a href="#contacto" class="nav-cta">Solicitar diagnóstico</a>
     </div>
@@ -624,9 +672,9 @@
     <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Inteligencia operativa para comercio físico · Castellón y Valencia</div>
-          <h1>Descubre dónde se te escapa margen antes de seguir decidiendo a ciegas.</h1>
-          <p>Instalamos visión computacional orientada a negocio para ayudarte a detectar merma, zonas muertas, productos con interés pero sin compra y patrones operativos que frenan tu rentabilidad. Sin reconocimiento facial y con una lectura clara para cualquier dueño o gerente.</p>
+          <div class="eyebrow">IA operativa y cumplimiento automatizado · Castellón y Valencia</div>
+          <h1>Convierte cámaras, datos y normativa en decisiones útiles para tu pyme.</h1>
+          <p>Núcleo Plana combina visión por computador, agentes de automatización y simulación operativa para ayudar a comercios, almacenes y pymes industriales a reducir pérdidas, mejorar seguridad y anticipar decisiones sin añadir más complejidad.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contacto">Quiero un diagnóstico gratuito</a>
             <a class="button button-secondary" href="#casos">Ver ejemplos de impacto</a>
@@ -634,33 +682,33 @@
           <div class="hero-points">
             <div class="point">
               <strong>72h</strong>
-              Instalación estimada sin obras ni paradas innecesarias.
+              Puesta en marcha rápida sobre operativa ya existente.
             </div>
             <div class="point">
               <strong>250+</strong>
-              Cuota mensual adaptable al tamaño y módulos del negocio.
+              Servicio modular según operación, riesgo y objetivos.
             </div>
             <div class="point">
               <strong>RGPD</strong>
-              Sin reconocimiento facial ni uso de imágenes para identificar personas.
+              Enfoque compatible con RGPD y sin reconocimiento facial.
             </div>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del servicio">
-          <div class="mini-label">Resumen claro</div>
+          <div class="mini-label">Tres capas de valor</div>
           <div class="score">
             <div class="score-box">
-              <strong>Qué detecta</strong>
-              Pérdidas por merma, zonas con baja atención, productos que no convierten y momentos donde la operativa va por detrás de la demanda real.
+              <strong>Operación y seguridad</strong>
+              Detecta fricción operativa, riesgos en almacén, uso incorrecto de EPIs, cuellos de botella y patrones que hacen perder margen o tiempo.
             </div>
             <div class="score-box">
-              <strong>Qué recibes</strong>
-              Diagnóstico inicial, instalación, lectura desde móvil, alertas y revisión periódica para convertir datos en decisiones.
+              <strong>Compliance y ayudas</strong>
+              Agentes que ordenan evidencias, preparan alertas normativas y ayudan a no perder subvenciones, documentación o trazabilidad crítica.
             </div>
             <div class="score-box">
-              <strong>Para quién encaja</strong>
-              Alimentación, retail especializado, hostelería, cosmética y otros negocios físicos con tráfico, stock o necesidad de optimizar operación.
+              <strong>Simulación antes de invertir</strong>
+              Modelos sencillos para estimar impacto financiero y operativo antes de cambiar procesos, comprar equipo o escalar una mejora.
             </div>
           </div>
         </aside>
@@ -670,22 +718,22 @@
     <section id="como-funciona">
       <div class="shell">
         <div class="section-intro">
-          <div class="mini-label">Cómo funciona</div>
-          <h2>No se trata de poner cámaras. Se trata de entender mejor tu negocio.</h2>
-          <p>La tecnología solo tiene sentido si termina traduciéndose en decisiones concretas. Por eso el servicio está pensado para que entiendas qué pasa, por qué pasa y qué conviene corregir primero.</p>
+          <div class="mini-label">Qué hacemos</div>
+          <h2>No vendemos tecnología suelta. Diseñamos una capa operativa que trabaja contigo.</h2>
+          <p>La propuesta de Núcleo Plana no es “más software”. Es una combinación práctica de visión IA, automatización y lectura de negocio para que una pyme pueda operar mejor y cumplir más sin depender de procesos manuales frágiles.</p>
         </div>
         <div class="problem-grid">
           <article class="section-card">
-            <h3>Detectamos patrones invisibles en el día a día</h3>
-            <p>Qué zonas reciben atención, qué productos se miran pero no se compran, en qué franjas sube la presión operativa y dónde empiezan a aparecer pérdidas evitables.</p>
+            <h3>Visión IA para operación, almacén y seguridad</h3>
+            <p>Analizamos cámaras existentes para detectar riesgos, flujos ineficientes, zonas calientes y frías, presión operativa y señales tempranas de pérdida o desorden.</p>
           </article>
           <article class="section-card">
-            <h3>Traducimos el dato en lectura útil</h3>
-            <p>No entregamos solo un panel. Entregamos una lectura entendible para que sepas si el problema es de surtido, ubicación, flujo, personal, exposición o rotación.</p>
+            <h3>Agentes que ordenan procesos y cumplimiento</h3>
+            <p>Conectamos tareas, documentación y datos para que la pyme tenga alertas de ayudas, seguimiento normativo, evidencias y procesos menos dependientes de improvisación.</p>
           </article>
           <article class="section-card">
-            <h3>Priorizamos acciones con impacto real</h3>
-            <p>El objetivo no es medirlo todo. Es ayudarte a decidir qué cambiar primero para recuperar margen, mejorar conversión o ganar eficiencia sin complicarte la operativa.</p>
+            <h3>Simulación antes de mover dinero o tiempo</h3>
+            <p>Antes de proponer cambios, modelamos escenarios para estimar impacto real. Así la conversación pasa de “creemos que funcionará” a “esto podría mejorar esto otro”.</p>
           </article>
         </div>
       </div>
@@ -694,29 +742,29 @@
     <section id="casos">
       <div class="shell">
         <div class="section-intro">
-          <div class="mini-label">Casos reales</div>
-          <h2>Resultados mejor explicados generan más confianza que una promesa exagerada.</h2>
-          <p>La prueba social funciona mejor cuando se presenta con contexto. Sector, situación inicial, intervención y resultado. Así el visitante entiende si se parece a su negocio de verdad.</p>
+          <div class="mini-label">Áreas de aplicación</div>
+          <h2>Una misma infraestructura puede resolver pérdidas, seguridad y cumplimiento.</h2>
+          <p>La ventaja competitiva está en reutilizar cámaras, datos y procesos para varias capas de valor. Así Núcleo Plana no entra como “otro gasto”, sino como una mejora transversal.</p>
         </div>
         <div class="proof-grid">
           <article class="proof">
-            <strong>Frutería · Castellón</strong>
-            <h3>Menos merma y más capacidad para anticiparse</h3>
-            <p>Negocio de proximidad con rotación irregular en algunas categorías. Tras identificar patrones de exposición y tiempos de reposición, se redujo la pérdida en producto sensible y se reorganizó el orden de revisión diaria.</p>
+            <strong>Comercio físico</strong>
+            <h3>Menos merma, mejor flujo y más visibilidad sobre la conversión</h3>
+            <p>Retail, alimentación y negocio de proximidad donde importa saber qué zonas atraen atención, qué producto no convierte y dónde se escapa margen por exposición, reposición o recorrido.</p>
           </article>
           <article class="proof">
-            <strong>Restauración · Valencia</strong>
-            <h3>Producción mejor ajustada a la demanda real</h3>
-            <p>Servicio con picos mal repartidos y preparación basada en intuición. La lectura por franjas permitió ajustar tiempos, prever mejor y reducir desajustes entre producción y venta.</p>
+            <strong>Almacén y pyme industrial</strong>
+            <h3>Más control sobre seguridad, circulación y disciplina operativa</h3>
+            <p>Entornos donde interesa detectar uso incorrecto de EPIs, riesgos de colisión, cuellos de botella y hábitos de operación que terminan afectando a productividad y prevención.</p>
           </article>
           <article class="proof">
-            <strong>Perfumería · Centro urbano</strong>
-            <h3>Más claridad sobre zonas calientes y frías</h3>
-            <p>Parte del surtido premium recibía menos visitas de las esperadas. El rediseño del recorrido y la nueva colocación de categorías ayudaron a mejorar visibilidad y atención sobre productos clave.</p>
+            <strong>Compliance y subvenciones</strong>
+            <h3>Menos papeleo desordenado y más capacidad para reaccionar a tiempo</h3>
+            <p>Pymes que necesitan ordenar evidencias, seguir cambios normativos o no perder oportunidades por falta de trazabilidad, documentación dispersa o avisos que llegan tarde.</p>
           </article>
         </div>
         <div class="note">
-          Los porcentajes exactos y el retorno dependen del tipo de negocio, del volumen y del problema de partida. El diagnóstico inicial sirve precisamente para estimar si hay recorrido suficiente antes de proponerte una implantación.
+          El retorno cambia según el problema principal: merma, seguridad, eficiencia, orden documental o inversión mal enfocada. Por eso la primera fase no vende instalación, vende criterio.
         </div>
       </div>
     </section>
@@ -724,25 +772,25 @@
     <section id="proceso">
       <div class="shell">
         <div class="section-intro">
-          <div class="mini-label">Proceso</div>
-          <h2>Primero entender. Luego medir. Después decidir.</h2>
-          <p>La secuencia importa. Un proceso serio reduce fricción comercial y aumenta la confianza porque deja claro que no se propone nada sin contexto ni sin números de partida.</p>
+          <div class="mini-label">Método</div>
+          <h2>Primero entender la operación. Luego automatizar lo que sí merece la pena.</h2>
+          <p>El orden importa porque no todo problema necesita la misma tecnología. Empezamos por el dolor real del negocio y solo después definimos qué capa de visión, agentes o simulación tiene sentido activar.</p>
         </div>
         <div class="steps">
           <article class="section-card">
             <div class="step-no">01</div>
-            <h3>Diagnóstico inicial</h3>
-            <p>Revisamos tu tipo de negocio, tus puntos críticos y qué oportunidades tiene sentido medir. Si no vemos recorrido razonable, te lo diremos con claridad.</p>
+            <h3>Diagnóstico operativo y de cumplimiento</h3>
+            <p>Identificamos si el problema principal está en flujo, seguridad, merma, documentación, subvenciones o toma de decisiones antes de proponer ninguna implantación.</p>
           </article>
           <article class="section-card">
             <div class="step-no">02</div>
-            <h3>Implementación ligera</h3>
-            <p>Instalación y configuración con el menor impacto posible sobre tu operativa habitual, priorizando captación útil desde la primera semana.</p>
+            <h3>Despliegue modular</h3>
+            <p>Activamos visión IA, automatización documental o simulación según el caso. La idea es reutilizar infraestructura existente y evitar proyectos pesados desde el primer día.</p>
           </article>
           <article class="section-card">
             <div class="step-no">03</div>
-            <h3>Lectura accionable</h3>
-            <p>Revisamos contigo qué significan los datos y qué cambios merece la pena probar primero. El valor está en la decisión, no en la pantalla.</p>
+            <h3>Lectura, evidencias y mejora continua</h3>
+            <p>Entregamos datos con contexto, alertas accionables y una base de evidencias para decidir mejor, justificar cambios y sostener mejoras con menos improvisación.</p>
           </article>
         </div>
       </div>
@@ -752,8 +800,8 @@
       <div class="shell">
         <div class="section-intro">
           <div class="mini-label">Preguntas frecuentes</div>
-          <h2>Las objeciones importantes deben quedar resueltas antes de la llamada.</h2>
-          <p>Cuando una web vende una solución técnica a un negocio local, la claridad importa más que la grandilocuencia. Estas respuestas están escritas para reducir dudas reales.</p>
+          <h2>Lo importante es entender si este enfoque encaja con tu operación real.</h2>
+          <p>La decisión no suele ser “quiero IA o no”. La decisión real es si tiene sentido introducir una capa de inteligencia operativa y cumplimiento en tu negocio ahora o más adelante.</p>
         </div>
         <div class="faq">
           <article class="faq-item">
@@ -762,23 +810,23 @@
           </article>
           <article class="faq-item">
             <h3>¿Cómo sé si me compensa?</h3>
-            <p>No tendría sentido prometer el mismo retorno para todos. Lo serio es estimar primero si tu negocio tiene suficiente merma, fricción comercial o ineficiencia operativa como para justificar la inversión.</p>
+            <p>Depende de si tu negocio pierde valor por ineficiencia, merma, seguridad, falta de trazabilidad o decisiones tomadas sin visibilidad suficiente. El diagnóstico inicial sirve para cuantificar eso antes de implantar nada.</p>
           </article>
           <article class="faq-item">
             <h3>¿Sirve si mi negocio es pequeño?</h3>
-            <p>Depende menos del tamaño y más del tipo de operación. Un negocio pequeño con mucho tráfico, producto perecedero o problemas de conversión puede tener más recorrido que otro mucho mayor.</p>
+            <p>Sí, si la operación tiene suficiente fricción o riesgo. Una pyme pequeña con almacén, rotación delicada, presión documental o tráfico mal aprovechado puede tener más retorno que una empresa mayor pero más simple.</p>
           </article>
           <article class="faq-item">
-            <h3>¿Voy a necesitar soporte técnico?</h3>
-            <p>No para el uso cotidiano. La idea es que tú y tu equipo recibáis una lectura simple, con acompañamiento para interpretar lo importante sin tener que convertiros en técnicos.</p>
+            <h3>¿Tengo que cambiar todo mi software?</h3>
+            <p>No necesariamente. La propuesta está pensada para integrarse sobre cámaras, hojas, procesos y herramientas ya existentes siempre que eso tenga sentido. El objetivo es sumar inteligencia, no rehacer la empresa desde cero.</p>
           </article>
           <article class="faq-item">
-            <h3>¿En cuánto tiempo se puede poner en marcha?</h3>
-            <p>La instalación puede resolverse con rapidez cuando el proyecto está claro, pero el plazo exacto depende del espacio, del número de puntos de medición y del alcance que convenga desplegar.</p>
+            <h3>¿También sirve para subvenciones o cumplimiento?</h3>
+            <p>Sí. Una de las ventajas diferenciales es usar agentes y flujos documentales para no perder ayudas, tener mejor trazabilidad y reducir el coste oculto de gestionar cumplimiento de forma manual.</p>
           </article>
           <article class="faq-item">
             <h3>¿Qué pasa si no veo claro el encaje?</h3>
-            <p>Precisamente para eso existe el diagnóstico inicial. El objetivo de la primera conversación es filtrar bien, no empujarte a contratar si la solución no encaja con tu caso.</p>
+            <p>Entonces no se fuerza. La primera conversación existe precisamente para filtrar si el mejor siguiente paso es visión IA, automatización, simulación o, simplemente, no hacer nada todavía.</p>
           </article>
         </div>
       </div>
@@ -789,25 +837,26 @@
         <div class="cta-card">
           <div class="cta-copy">
             <div class="mini-label" style="color:#ffe1b0;border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);">Diagnóstico inicial</div>
-            <h2>Habla con una empresa seria antes de invertir en otra herramienta más.</h2>
-            <p>Si hay margen para mejorar, te diremos dónde puede estar. Si no lo vemos claro, también. Esa transparencia convierte mejor que cualquier promesa inflada.</p>
+            <h2>Antes de invertir en más software, entiende qué capa te falta de verdad.</h2>
+            <p>Puede ser visión para operación, automatización para cumplimiento o simulación antes de mover recursos. La diferencia está en detectar la palanca correcta antes de desplegar tecnología por inercia.</p>
           </div>
           <div class="hero-actions" style="margin-top:0;">
             <a class="button button-primary" href="#contacto">Reservar diagnóstico</a>
+            <a class="button button-secondary" href="https://wa.me/34664588394?text=Hola,%20quiero%20información%20sobre%20Núcleo%20Plana" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
             <a class="button button-secondary" href="mailto:ceo@nucleoplana.es">Escribir por email</a>
           </div>
           <div class="stats">
             <div class="stat">
-              <strong>Más claridad</strong>
-              Mensaje comercial fuerte, pero sin caer en claims difíciles de sostener.
+              <strong>Operación</strong>
+              Menos fricción, menos pérdidas invisibles y mejor lectura del día a día.
             </div>
             <div class="stat">
-              <strong>Más confianza</strong>
-              Mejor equilibrio entre ambición comercial, prueba social y cumplimiento.
+              <strong>Compliance</strong>
+              Más orden documental, alertas útiles y menos dependencia del caos manual.
             </div>
             <div class="stat">
-              <strong>Más conversión</strong>
-              CTA repartidas con lógica y menor sensación de presión excesiva.
+              <strong>Decisión</strong>
+              Simulación y criterio antes de gastar tiempo, dinero o foco en la dirección equivocada.
             </div>
           </div>
         </div>
@@ -818,10 +867,11 @@
       <div class="shell contact-grid">
         <article class="contact-card">
           <div class="mini-label">Contacto</div>
-          <h2>Cuéntanos qué te preocupa y valoramos si hay recorrido real.</h2>
-          <p>La mejor primera conversación es concreta. Qué tipo de negocio tienes, qué problema te duele más ahora mismo y qué intentos has hecho ya para resolverlo.</p>
+          <h2>Cuéntanos si tu problema hoy es operativo, documental o de decisión.</h2>
+          <p>La primera conversación sirve para ubicar si necesitas control sobre almacén y seguridad, más claridad sobre merma y flujo, automatización de cumplimiento o una simulación antes de invertir.</p>
           <div class="contact-list">
             <div><strong>Email:</strong> <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></div>
+            <div><strong>WhatsApp:</strong> <a href="https://wa.me/34664588394?text=Hola,%20quiero%20información%20sobre%20Núcleo%20Plana" target="_blank" rel="noopener noreferrer">+34 664 58 83 94</a></div>
             <div><strong>Zona de trabajo:</strong> Castellón y Valencia</div>
             <div><strong>Atención inicial:</strong> respuesta orientativa en menos de 24 horas laborables</div>
           </div>
@@ -833,21 +883,27 @@
         </article>
 
         <article class="form-card">
-          <form action="https://formspree.io/f/xkovlyja" method="post">
+          <form action="https://formspree.io/f/xkovlyja" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="_subject" value="Nueva solicitud desde nucleoplana.es">
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label>No rellenar este campo
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
             <div class="field-grid">
               <label>
                 Nombre y apellidos
-                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                <input type="text" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
               </label>
               <label>
                 Teléfono
-                <input type="tel" name="telefono" placeholder="+34 600 000 000" required>
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel" required>
               </label>
             </div>
             <div class="field-grid">
               <label>
                 Email
-                <input type="email" name="email" placeholder="tuemail@negocio.com" required>
+                <input type="email" name="email" placeholder="tuemail@negocio.com" autocomplete="email" required>
               </label>
               <label>
                 Tipo de negocio
@@ -858,13 +914,14 @@
                   <option>Hostelería o restauración</option>
                   <option>Perfumería o cosmética</option>
                   <option>Moda o retail especializado</option>
-                  <option>Otro comercio físico</option>
+                  <option>Almacén o pyme industrial</option>
+                  <option>Otro negocio físico</option>
                 </select>
               </label>
             </div>
             <label>
               ¿Cuál es tu principal problema ahora mismo?
-              <textarea name="mensaje" placeholder="Ejemplo: tiramos producto, no sabemos por qué algunas zonas no venden o no tenemos claro cuándo reforzar personal." required></textarea>
+              <textarea name="mensaje" placeholder="Ejemplo: tiramos producto, tenemos riesgos en almacén, no llegamos a las ayudas a tiempo o no sabemos si una inversión va a mejorar la operación." required></textarea>
             </label>
             <label class="consent">
               <input type="checkbox" name="consentimiento" required>
@@ -880,7 +937,7 @@
 
   <footer>
     <div class="shell footer-grid">
-      <p>Núcleo Plana ofrece inteligencia operativa para comercio físico con un enfoque claro: medir solo lo que ayuda a tomar mejores decisiones. Página preparada como versión corregida de landing, con navegación coherente, copy más creíble y base legal visible.</p>
+      <p>Núcleo Plana ayuda a pymes físicas e industriales a reducir pérdidas, mejorar seguridad y ordenar cumplimiento mediante visión IA, automatización documental y simulación operativa antes de invertir.</p>
       <div class="footer-links">
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#casos">Casos reales</a>
