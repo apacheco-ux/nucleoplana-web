@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Núcleo Plana | Hub tecnológico para pymes de la Comunidad Valenciana</title>
+  <meta name="description" content="Núcleo Plana opera como hub tecnológico para pymes de Castellón y Valencia: IA operativa, visión por computador, cumplimiento, automatización documental, marketing y autoridad local.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nucleoplana.es/hub-tecnologico/">
+  <meta property="og:title" content="Núcleo Plana | Hub tecnológico para pymes de la Comunidad Valenciana">
+  <meta property="og:description" content="Una estructura coordinada de IA, operación, cumplimiento, ventas y marketing para convertir Núcleo Plana en un hub tecnológico real.">
+  <meta property="og:url" content="https://nucleoplana.es/hub-tecnologico/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07101c;
+      --paper: rgba(9, 23, 43, 0.8);
+      --paper-strong: rgba(11, 29, 54, 0.94);
+      --ink: #eef5ff;
+      --muted: #9fb4cf;
+      --brand: #58afff;
+      --accent: #90d6ff;
+      --accent-soft: rgba(74, 168, 255, 0.14);
+      --glow: 0 0 0 1px rgba(144, 214, 255, 0.05), 0 24px 64px rgba(3, 10, 20, 0.42);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(62, 166, 255, 0.24), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(87, 122, 255, 0.2), transparent 24%),
+        linear-gradient(180deg, #081321 0%, #07101c 60%, #040a14 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(127, 211, 255, 0.1);
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 26, 0.78);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; }
+    .brand { font-family: "Fraunces", serif; font-size: 1.06rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .brand span { color: var(--brand); }
+    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 0.94rem; }
+    .nav-links a:hover, .footer-links a:hover { color: var(--accent); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 14px 24px; border-radius: 999px; font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(10, 133, 255, 0.16); }
+    .button-primary { background: linear-gradient(135deg, #58afff 0%, #7bd7ff 100%); color: #04111f; box-shadow: 0 14px 30px rgba(62, 166, 255, 0.22); }
+    .button-secondary { border: 1px solid rgba(127, 211, 255, 0.14); background: rgba(7, 20, 38, 0.42); color: var(--ink); }
+    .hero { padding: 76px 0 34px; }
+    .hero-grid, .grid-4, .grid-3, .contact-grid, .footer-grid { display: grid; gap: 20px; }
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; gap: 36px; }
+    .eyebrow, .mini-label {
+      display: inline-flex; width: fit-content; padding: 9px 15px; border: 1px solid rgba(127, 211, 255, 0.16); border-radius: 999px;
+      background: rgba(8, 23, 42, 0.46); color: var(--muted); font-size: 0.88rem; backdrop-filter: blur(12px);
+    }
+    .mini-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .hero-copy h1, .section-intro h2, .contact-card h2 {
+      margin: 18px 0 16px; font-family: "Fraunces", serif; line-height: 0.96; letter-spacing: -0.04em;
+    }
+    .hero-copy h1 { max-width: 11ch; font-size: clamp(2.9rem, 5.4vw, 5.5rem); }
+    .hero-copy p, .section-intro p, .card p, .panel p, .contact-card p {
+      margin: 0; color: var(--muted); line-height: 1.76;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .card, .panel, .contact-card, .form-card {
+      border: 1px solid rgba(127, 211, 255, 0.12); border-radius: var(--radius); background: var(--paper); box-shadow: var(--glow); backdrop-filter: blur(16px);
+    }
+    .panel {
+      padding: 30px;
+      background: radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 34%), linear-gradient(180deg, rgba(10, 28, 52, 0.96) 0%, rgba(8, 20, 39, 0.94) 100%);
+    }
+    .panel-list { display: grid; gap: 14px; margin-top: 10px; }
+    .panel-item {
+      padding: 18px; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(127, 211, 255, 0.1);
+    }
+    .panel-item strong, .card strong { display: block; margin-bottom: 8px; color: var(--ink); }
+    section { padding: 36px 0; }
+    .section-intro { max-width: 780px; margin-bottom: 24px; }
+    .section-intro h2, .contact-card h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { padding: 28px; background: rgba(8, 27, 48, 0.62); }
+    .card h3 { margin: 0 0 12px; font-family: "Fraunces", serif; font-size: 1.18rem; line-height: 1.2; }
+    .contact-grid { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
+    .contact-card, .form-card { padding: 28px; }
+    .contact-list, .mini-links, .footer-links { display: flex; flex-wrap: wrap; gap: 14px 18px; color: var(--muted); }
+    .contact-list { flex-direction: column; gap: 10px; margin-top: 18px; }
+    .mini-links { margin-top: 18px; }
+    form { display: grid; gap: 16px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    label { display: grid; gap: 8px; font-size: 0.96rem; color: var(--ink); }
+    input, select, textarea {
+      width: 100%; padding: 14px 16px; border: 1px solid rgba(127, 211, 255, 0.18); border-radius: 14px; background: var(--paper-strong); color: var(--ink); font: inherit;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .consent {
+      display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(127, 211, 255, 0.12); color: var(--muted); line-height: 1.6; font-size: 0.92rem;
+    }
+    .consent input { width: auto; margin-top: 4px; padding: 0; }
+    footer { padding: 28px 0 42px; }
+    .footer-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+    .footer-grid p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .footer-links { justify-content: flex-end; }
+    @media (max-width: 960px) {
+      .hero-grid, .grid-4, .grid-3, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      .nav { flex-direction: column; align-items: stretch; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+      .hero-copy h1 { font-size: clamp(2.45rem, 14vw, 4.1rem); max-width: none; }
+      .panel, .card, .contact-card, .form-card { padding: 22px; border-radius: 20px; }
+      section { padding: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a href="/" class="brand">Núcleo <span>Plana</span></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/">Home</a>
+        <a href="#departamentos">Departamentos</a>
+        <a href="#verticales">Verticales</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="button button-primary">Hablar con Núcleo Plana</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Hub tecnológico · Comunidad Valenciana · IA operativa</div>
+          <h1>Estamos construyendo una estructura de IA aplicada para convertir Núcleo Plana en un hub tecnológico real.</h1>
+          <p>Núcleo Plana une operación, visión por computador, cumplimiento, marketing, ventas y autoridad local dentro de un mismo sistema. La idea no es vender piezas sueltas, sino coordinar tecnología útil para pymes de Castellón y Valencia.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacto">Quiero explorar una colaboración</a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/alejandro-pacheco-ramos/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Modelo del hub">
+          <div class="mini-label">Qué integra el hub</div>
+          <div class="panel-list">
+            <div class="panel-item">
+              <strong>Operación</strong>
+              Mejora operativa, PRL, almacén, retail y disciplina de ejecución.
+            </div>
+            <div class="panel-item">
+              <strong>Automatización</strong>
+              Documentación, alertas, seguimiento y procesos con menos dependencia manual.
+            </div>
+            <div class="panel-item">
+              <strong>Captación y autoridad</strong>
+              Web, LinkedIn, marketing, ventas y posicionamiento local coordinados.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="departamentos">
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Departamentos IA</div>
+          <h2>Núcleo Plana ya no se piensa como una sola web, sino como un sistema de departamentos inteligentes.</h2>
+          <p>Cada departamento tiene una función concreta y una misión de negocio. La coordinación entre todos es lo que convierte la marca en hub.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <h3>Dirección y estrategia</h3>
+            <p>Prioriza, decide verticales, ordena backlog y alinea todas las piezas del sistema.</p>
+          </article>
+          <article class="card">
+            <h3>Web y CRO</h3>
+            <p>Mejora la conversión, la claridad del mensaje, el responsive y la confianza de la web.</p>
+          </article>
+          <article class="card">
+            <h3>Ventas y messaging</h3>
+            <p>Refina objeciones, estructura ofertas y convierte mejor cada conversación comercial.</p>
+          </article>
+          <article class="card">
+            <h3>Marketing y demanda</h3>
+            <p>Genera backlog de captación, campañas, activos y oportunidades de crecimiento.</p>
+          </article>
+          <article class="card">
+            <h3>LinkedIn y autoridad</h3>
+            <p>Conecta la autoridad personal y la de Núcleo Plana con la web y las verticales.</p>
+          </article>
+          <article class="card">
+            <h3>Operación y entrega</h3>
+            <p>Convierte el discurso en metodología real, casos de uso y despliegues repetibles.</p>
+          </article>
+          <article class="card">
+            <h3>Subvenciones y partners</h3>
+            <p>Vigila oportunidades, ecosistema institucional y acceso a colaboraciones clave.</p>
+          </article>
+          <article class="card">
+            <h3>I+D y producto</h3>
+            <p>Detecta nuevas verticales, experimenta con agentes y empuja a Núcleo Plana hacia plataforma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="verticales">
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Verticales activas</div>
+          <h2>El hub ya se está desplegando en líneas de negocio visibles.</h2>
+          <p>La home funciona como puerta general y las verticales permiten vender con más precisión según el dolor real de cada empresa.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <strong>Almacén + PRL + visión IA</strong>
+            <p>Riesgos, EPIs, circulación, cuellos de botella y puntos ciegos en operación industrial.</p>
+            <p><a href="/servicios/almacen-prl-vision-ia/" style="color:var(--accent);font-weight:700;">Ver vertical →</a></p>
+          </article>
+          <article class="card">
+            <strong>Compliance + subvenciones + documentación</strong>
+            <p>Orden documental, alertas, evidencias y ayudas para pymes que necesitan más sistema y menos caos.</p>
+            <p><a href="/servicios/compliance-subvenciones-documentacion/" style="color:var(--accent);font-weight:700;">Ver vertical →</a></p>
+          </article>
+          <article class="card">
+            <strong>Retail y operación física</strong>
+            <p>Merma, flujo, visibilidad y decisiones mejores para comercio y negocio de proximidad.</p>
+            <p><a href="/" style="color:var(--accent);font-weight:700;">Ver home →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="shell contact-grid">
+        <article class="contact-card">
+          <div class="mini-label">Contacto</div>
+          <h2>Si quieres colaborar, implantar o construir algo con Núcleo Plana, empecemos por una conversación útil.</h2>
+          <p>Estamos construyendo un sistema con ambición regional y foco práctico. Si operas en la Comunidad Valenciana y ves encaje, tiene sentido hablar.</p>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></div>
+            <div><strong>WhatsApp:</strong> <a href="https://wa.me/34664588394?text=Hola,%20quiero%20hablar%20sobre%20N%C3%BAcleo%20Plana%20como%20hub%20tecnol%C3%B3gico" target="_blank" rel="noopener noreferrer">+34 664 58 83 94</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alejandro-pacheco-ramos/" target="_blank" rel="noopener noreferrer">alejandro-pacheco-ramos</a></div>
+            <div><strong>Ámbito:</strong> Castellón, Valencia y Comunidad Valenciana</div>
+          </div>
+        </article>
+
+        <article class="form-card">
+          <form action="https://formspree.io/f/xkovlyja" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="_subject" value="Nueva solicitud desde hub-tecnologico">
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label>No rellenar este campo
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Nombre y apellidos
+                <input type="text" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
+              </label>
+              <label>
+                Teléfono
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel" required>
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="tuemail@empresa.com" autocomplete="email" required>
+              </label>
+              <label>
+                Tipo de interés
+                <select name="sector" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Colaboración o partner</option>
+                  <option>Proyecto de pyme</option>
+                  <option>Ayuntamiento o institución</option>
+                  <option>Programa o subvención</option>
+                  <option>Prensa o visibilidad</option>
+                  <option>Otro</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              ¿Qué quieres construir o explorar?
+              <textarea name="mensaje" placeholder="Ejemplo: queremos hablar sobre una colaboración, una implantación o una línea de trabajo para pymes de la Comunidad Valenciana." required></textarea>
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consentimiento" required>
+              <span>He leído y acepto la <a href="/privacidad/"><strong>Política de Privacidad</strong></a>. Autorizo el tratamiento de mis datos para recibir respuesta sobre esta solicitud.</span>
+            </label>
+            <button class="button button-primary" type="submit">Solicitar conversación inicial</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <p>Núcleo Plana está evolucionando hacia un hub tecnológico para pymes de la Comunidad Valenciana, integrando operación, visión IA, cumplimiento, automatización y autoridad comercial en un mismo sistema.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/servicios/almacen-prl-vision-ia/">Almacén + PRL</a>
+        <a href="/servicios/compliance-subvenciones-documentacion/">Compliance + subvenciones</a>
+        <a href="https://www.linkedin.com/in/alejandro-pacheco-ramos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
