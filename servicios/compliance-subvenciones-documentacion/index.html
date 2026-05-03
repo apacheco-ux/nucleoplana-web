@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Núcleo Plana | Compliance, subvenciones y documentación</title>
+  <meta name="description" content="Automatización documental, alertas normativas y orden de evidencias para pymes que no quieren perder ayudas, tiempo ni control por caos administrativo.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nucleoplana.es/servicios/compliance-subvenciones-documentacion/">
+  <meta property="og:title" content="Núcleo Plana | Compliance, subvenciones y documentación">
+  <meta property="og:description" content="Ordena evidencias, recibe alertas útiles y reduce el coste oculto del caos documental en tu pyme.">
+  <meta property="og:url" content="https://nucleoplana.es/servicios/compliance-subvenciones-documentacion/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07101c;
+      --paper: rgba(9, 23, 43, 0.8);
+      --paper-strong: rgba(11, 29, 54, 0.94);
+      --ink: #eef5ff;
+      --muted: #a1b4cd;
+      --brand: #58afff;
+      --accent: #90d6ff;
+      --accent-soft: rgba(74, 168, 255, 0.14);
+      --glow: 0 0 0 1px rgba(144, 214, 255, 0.05), 0 24px 64px rgba(3, 10, 20, 0.42);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(62, 166, 255, 0.24), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(87, 122, 255, 0.18), transparent 24%),
+        linear-gradient(180deg, #081321 0%, #07101c 60%, #040a14 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(127, 211, 255, 0.1);
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 26, 0.78);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0;
+    }
+    .brand {
+      font-family: "Fraunces", serif; font-size: 1.06rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .brand span { color: var(--brand); }
+    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 0.94rem; }
+    .nav-links a:hover, .mini-links a:hover, .footer-links a:hover { color: var(--accent); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 14px 24px;
+      border-radius: 999px; font-weight: 700; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(10, 133, 255, 0.16); }
+    .button-primary {
+      background: linear-gradient(135deg, #58afff 0%, #7bd7ff 100%); color: #04111f; box-shadow: 0 14px 30px rgba(62, 166, 255, 0.22);
+    }
+    .button-secondary {
+      border: 1px solid rgba(127, 211, 255, 0.14); background: rgba(7, 20, 38, 0.42); color: var(--ink);
+    }
+    .hero { padding: 74px 0 34px; }
+    .hero-grid, .grid-3, .steps, .contact-grid, .footer-grid { display: grid; gap: 20px; }
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; gap: 36px; }
+    .eyebrow, .mini-label {
+      display: inline-flex; width: fit-content; padding: 9px 15px; border: 1px solid rgba(127, 211, 255, 0.16);
+      border-radius: 999px; background: rgba(8, 23, 42, 0.46); color: var(--muted); font-size: 0.88rem; backdrop-filter: blur(12px);
+    }
+    .mini-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .hero-copy h1, .section-intro h2, .contact-card h2 {
+      margin: 18px 0 16px; font-family: "Fraunces", serif; line-height: 0.96; letter-spacing: -0.04em;
+    }
+    .hero-copy h1 { max-width: 10ch; font-size: clamp(2.9rem, 5.4vw, 5.5rem); }
+    .hero-copy p, .section-intro p, .panel p, .card p, .contact-card p {
+      margin: 0; color: var(--muted); line-height: 1.76;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .panel, .card, .contact-card, .form-card {
+      border: 1px solid rgba(127, 211, 255, 0.12); border-radius: var(--radius); background: var(--paper); box-shadow: var(--glow); backdrop-filter: blur(16px);
+    }
+    .panel {
+      padding: 30px;
+      background: radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 34%), linear-gradient(180deg, rgba(10, 28, 52, 0.96) 0%, rgba(8, 20, 39, 0.94) 100%);
+    }
+    .panel-list, .bullet-list { display: grid; gap: 14px; margin-top: 10px; }
+    .panel-item, .bullet { padding: 18px; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(127, 211, 255, 0.1); }
+    .panel-item strong, .card strong, .bullet strong { display: block; margin-bottom: 8px; color: var(--ink); }
+    section { padding: 36px 0; }
+    .section-intro { max-width: 760px; margin-bottom: 24px; }
+    .section-intro h2, .contact-card h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+    .grid-3, .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { padding: 28px; background: rgba(8, 27, 48, 0.62); }
+    .card h3 { margin: 0 0 12px; font-family: "Fraunces", serif; font-size: 1.24rem; line-height: 1.2; }
+    .step-no {
+      width: 52px; height: 52px; margin-bottom: 16px; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700;
+    }
+    .cta-note {
+      margin-top: 22px; padding: 16px 18px; border-radius: var(--radius-sm); background: rgba(12, 35, 66, 0.66);
+      border: 1px solid rgba(127, 211, 255, 0.16); color: #d3e9ff;
+    }
+    .contact-grid { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
+    .contact-card, .form-card { padding: 28px; }
+    .contact-list, .mini-links, .footer-links { display: flex; flex-wrap: wrap; gap: 14px 18px; color: var(--muted); }
+    .contact-list { flex-direction: column; gap: 10px; margin-top: 18px; }
+    .mini-links { margin-top: 18px; }
+    form { display: grid; gap: 16px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    label { display: grid; gap: 8px; font-size: 0.96rem; color: var(--ink); }
+    input, select, textarea {
+      width: 100%; padding: 14px 16px; border: 1px solid rgba(127, 211, 255, 0.18); border-radius: 14px; background: var(--paper-strong); color: var(--ink); font: inherit;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .consent {
+      display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(127, 211, 255, 0.12); color: var(--muted); line-height: 1.6; font-size: 0.92rem;
+    }
+    .consent input { width: auto; margin-top: 4px; padding: 0; }
+    footer { padding: 28px 0 42px; }
+    .footer-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+    .footer-grid p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .footer-links { justify-content: flex-end; }
+    @media (max-width: 960px) {
+      .hero-grid, .grid-3, .steps, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      .nav { flex-direction: column; align-items: stretch; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+      .hero-copy h1 { font-size: clamp(2.45rem, 14vw, 4.1rem); max-width: none; }
+      .panel, .card, .contact-card, .form-card { padding: 22px; border-radius: 20px; }
+      section { padding: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a href="/" class="brand">Núcleo <span>Plana</span></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/">Home</a>
+        <a href="#problemas">Problemas</a>
+        <a href="#metodo">Método</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="button button-primary">Solicitar revisión</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Compliance · Subvenciones · Documentación · Castellón y Valencia</div>
+          <h1>Ordena la parte documental de tu pyme antes de que vuelva a costarte ayudas, tiempo o foco.</h1>
+          <p>Núcleo Plana diseña una capa de automatización documental y seguimiento útil para que una pyme reduzca caos administrativo, conserve evidencias relevantes y reaccione antes ante cambios, ayudas o solicitudes que no deberían pillarla tarde.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacto">Quiero revisar mi situación</a>
+            <a class="button button-secondary" href="https://wa.me/34664588394?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20compliance%2C%20subvenciones%20y%20documentaci%C3%B3n" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Prioridades del servicio">
+          <div class="mini-label">Qué ordenamos</div>
+          <div class="panel-list">
+            <div class="panel-item">
+              <strong>Evidencias y trazabilidad</strong>
+              Documentos, estados, responsables y puntos de seguimiento que hoy viven dispersos entre correo, carpetas y memoria.
+            </div>
+            <div class="panel-item">
+              <strong>Alertas útiles</strong>
+              Cambios normativos, ayudas, plazos o tareas críticas que no deberían depender de acordarse a mano.
+            </div>
+            <div class="panel-item">
+              <strong>Lectura ejecutiva</strong>
+              Qué está pendiente, qué se puede perder, qué conviene priorizar y quién tiene que mover cada pieza.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problemas">
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Dónde se rompe</div>
+          <h2>La mayoría de pymes no tienen un gran problema legal. Tienen demasiadas pequeñas fugas de orden.</h2>
+          <p>Subvenciones que llegan tarde, documentación que nadie encuentra, evidencias sin criterio, plazos que dependen de un correo perdido o procesos que cada persona gestiona distinto.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Ayudas que se escapan</h3>
+            <p>Se conocen tarde, se preparan con prisa o no se sostienen bien porque falta orden documental previo.</p>
+          </article>
+          <article class="card">
+            <h3>Trazabilidad débil</h3>
+            <p>Cuando toca justificar una decisión, una inversión o una actuación, todo depende de buscar entre correos y carpetas sin estructura.</p>
+          </article>
+          <article class="card">
+            <h3>Demasiado trabajo manual</h3>
+            <p>Seguimientos, revisiones y recordatorios que consumen tiempo de gente valiosa sin aportar control real.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Qué aporta</div>
+          <h2>Menos caos invisible y más capacidad para reaccionar con criterio.</h2>
+          <p>No se trata de “hacer compliance” como etiqueta. Se trata de construir un sistema sencillo para que la pyme tenga mejor memoria operativa y menos dependencia del desorden.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <strong>Mapa documental</strong>
+            <p>Qué existe, qué falta, qué debería centralizarse y qué conviene vigilar de forma recurrente.</p>
+          </article>
+          <article class="card">
+            <strong>Flujos y responsables</strong>
+            <p>Cada tarea crítica con dueño, estado y siguiente paso para reducir ambigüedad y retrasos.</p>
+          </article>
+          <article class="card">
+            <strong>Alertas priorizadas</strong>
+            <p>No más ruido. Solo avisos y seguimientos que ayudan a no perder oportunidades ni control.</p>
+          </article>
+        </div>
+        <div class="cta-note">
+          Esta vertical encaja especialmente bien cuando la pyme ya siente que “no le falta intención, le falta sistema”.
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Método</div>
+          <h2>Primero ordenamos el terreno. Luego automatizamos solo lo que merece la pena.</h2>
+          <p>No tiene sentido automatizar caos. La secuencia correcta es entender el flujo actual, limpiar lo esencial y construir una capa de seguimiento que no cargue más a la empresa.</p>
+        </div>
+        <div class="steps">
+          <article class="card">
+            <div class="step-no">01</div>
+            <h3>Diagnóstico documental</h3>
+            <p>Revisamos ayudas, obligaciones, evidencias y puntos donde hoy dependes demasiado de memoria o urgencia.</p>
+          </article>
+          <article class="card">
+            <div class="step-no">02</div>
+            <h3>Diseño del flujo</h3>
+            <p>Definimos qué centralizar, qué automatizar, qué alertar y qué responsables deberían tener visibilidad.</p>
+          </article>
+          <article class="card">
+            <div class="step-no">03</div>
+            <h3>Seguimiento práctico</h3>
+            <p>Entregamos una capa operativa más clara para que el orden documental ayude de verdad a decidir y reaccionar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="shell contact-grid">
+        <article class="contact-card">
+          <div class="mini-label">Contacto</div>
+          <h2>Cuéntanos qué parte del orden documental hoy se te está escapando.</h2>
+          <p>La primera conversación sirve para ubicar si el problema principal está en ayudas, evidencias, seguimiento, documentación dispersa o falta de responsables claros.</p>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></div>
+            <div><strong>WhatsApp:</strong> <a href="https://wa.me/34664588394?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20compliance%2C%20subvenciones%20y%20documentaci%C3%B3n" target="_blank" rel="noopener noreferrer">+34 664 58 83 94</a></div>
+            <div><strong>Zona de trabajo:</strong> Castellón y Valencia</div>
+            <div><strong>Encaje ideal:</strong> pymes con ayudas, crecimiento, exigencia documental o demasiada dependencia del seguimiento manual</div>
+          </div>
+          <div class="mini-links">
+            <a href="/aviso-legal/">Aviso legal</a>
+            <a href="/privacidad/">Privacidad</a>
+            <a href="/cookies/">Cookies</a>
+          </div>
+        </article>
+
+        <article class="form-card">
+          <form action="https://formspree.io/f/xkovlyja" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="_subject" value="Nueva solicitud desde compliance-subvenciones-documentacion">
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label>No rellenar este campo
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Nombre y apellidos
+                <input type="text" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
+              </label>
+              <label>
+                Teléfono
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel" required>
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="tuemail@empresa.com" autocomplete="email" required>
+              </label>
+              <label>
+                Tipo de empresa
+                <select name="sector" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Pyme industrial</option>
+                  <option>Comercio físico</option>
+                  <option>Servicios profesionales</option>
+                  <option>Logística o almacén</option>
+                  <option>Empresa con ayudas o subvenciones activas</option>
+                  <option>Otro negocio</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              ¿Qué parte quieres ordenar primero?
+              <textarea name="mensaje" placeholder="Ejemplo: perdemos demasiado tiempo buscando documentación, no tenemos un sistema claro para ayudas o dependemos de recordatorios manuales para cosas importantes." required></textarea>
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consentimiento" required>
+              <span>He leído y acepto la <a href="/privacidad/"><strong>Política de Privacidad</strong></a>. Autorizo el tratamiento de mis datos para recibir respuesta sobre esta solicitud.</span>
+            </label>
+            <button class="button button-primary" type="submit">Solicitar revisión inicial</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <p>Núcleo Plana ayuda a pymes a reducir caos documental, mejorar trazabilidad y reaccionar antes ante ayudas, cambios y necesidades de seguimiento operativo.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/servicios/almacen-prl-vision-ia/">Almacén + PRL</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
