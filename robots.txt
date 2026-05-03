@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /landing-ventas/
 
 Sitemap: https://nucleoplana.es/sitemap.xml

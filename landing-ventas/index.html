@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Núcleo Plana · Para de Perder Dinero Hoy</title>
 <meta name="description" content="Tu negocio físico pierde entre 300€ y 2.000€ al mes sin saberlo. En 72 horas te decimos exactamente cuánto y cómo recuperarlo.">
-<meta name="robots" content="noindex"><!-- Landing de ventas, no indexar -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formsubmit.co; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex"><!-- Landing de ventas, no indexar -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://nucleoplana.es/landing-ventas/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -680,19 +680,16 @@ footer a{color:var(--cyan);text-decoration:none;}
 <section class="close-section" id="diagnostico">
   <h2>Reserva tu diagnóstico.<br><span>Quedan 2 plazas esta semana.</span></h2>
   <p>Rellena el formulario y te contactamos en menos de 24 horas para acordar el análisis de tu negocio — sin coste, sin compromiso.</p>
-  <form class="close-form" action="https://formsubmit.co/ceo@nucleoplana.es" method="POST" accept-charset="UTF-8">
+  <form class="close-form" action="https://formspree.io/f/xkovlyja" method="POST" accept-charset="UTF-8">
     <input type="hidden" name="_subject" value="Nueva solicitud desde landing-ventas">
     <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
       <label>No rellenar este campo
         <input type="text" name="_honey" tabindex="-1" autocomplete="off">
       </label>
     </div>
-    <input type="hidden" name="_subject" value="Nuevo diagnóstico gratuito - Landing ventas">
-    <input type="hidden" name="_next" value="https://nucleoplana.es/gracias">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="tel" name="telefono" placeholder="Teléfono (te llamamos hoy)" required>
-    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+    <input type="tel" name="telefono" placeholder="Teléfono (te llamamos hoy)" autocomplete="tel" inputmode="tel" required>
+    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
     <select name="sector" required>
       <option value="" disabled selected>Tipo de negocio</option>
       <option value="alimentacion">Alimentación / Frutería / Carnicería</option>
@@ -703,6 +700,10 @@ footer a{color:var(--cyan);text-decoration:none;}
       <option value="farmacia">Farmacia / Parafarmacia</option>
       <option value="otro">Otro comercio físico</option>
     </select>
+    <label style="display:flex;gap:10px;align-items:flex-start;font-size:.86rem;line-height:1.5;color:var(--gray);text-align:left;">
+      <input type="checkbox" name="consentimiento" required style="margin-top:4px;">
+      <span>He leído y acepto la <a href="https://nucleoplana.es/privacidad" style="color:var(--cyan);text-decoration:underline;">Política de Privacidad</a>. Autorizo el tratamiento de mis datos para recibir respuesta sobre mi solicitud.</span>
+    </label>
     <button type="submit" class="btn-submit">Quiero mi diagnóstico gratuito →</button>
     <p class="form-guarantee">🔒 Tus datos solo se usan para contactarte. Sin spam. Sin compartir con terceros.</p>
   </form>
@@ -714,7 +715,7 @@ footer a{color:var(--cyan);text-decoration:none;}
     <strong style="color:var(--white);">Núcleo Plana</strong> · Inteligencia operativa para comercio físico · Castellón<br>
     <a href="https://nucleoplana.es">nucleoplana.es</a> · <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a>
   </p>
-  <p style="margin-top:12px;font-size:.8rem;">© 2025 Núcleo Plana · <a href="https://nucleoplana.es/aviso-legal">Aviso legal</a> · <a href="https://nucleoplana.es/privacidad">Privacidad</a></p>
+  <p style="margin-top:12px;font-size:.8rem;">© 2026 Núcleo Plana · <a href="https://nucleoplana.es/aviso-legal">Aviso legal</a> · <a href="https://nucleoplana.es/privacidad">Privacidad</a> · <a href="https://nucleoplana.es/cookies">Cookies</a></p>
 </footer>
 
 <!-- WhatsApp -->
