@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Núcleo Plana | Inteligencia operativa para comercio físico</title>
-  <meta name="description" content="Detecta merma, zonas muertas y oportunidades de conversión en tu negocio con visión computacional orientada a resultados. Diagnóstico inicial gratuito en Castellón y Valencia.">
+  <title>Núcleo Plana | IA operativa, compliance y visión para pymes</title>
+  <meta name="description" content="IA operativa, visión por computador y automatización documental para comercios, almacenes y pymes industriales en Castellón y Valencia. Diagnóstico inicial sin compromiso.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://nucleoplana.es/">
-  <meta property="og:title" content="Núcleo Plana | Inteligencia operativa para comercio físico">
-  <meta property="og:description" content="Detecta merma, zonas muertas y oportunidades de conversión en tu negocio con visión computacional orientada a resultados. Diagnóstico inicial gratuito en Castellón y Valencia.">
+  <meta property="og:title" content="Núcleo Plana | IA operativa, compliance y visión para pymes">
+  <meta property="og:description" content="IA operativa, visión por computador y automatización documental para comercios, almacenes y pymes industriales en Castellón y Valencia. Diagnóstico inicial sin compromiso.">
   <meta property="og:url" content="https://nucleoplana.es/">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,6 +125,10 @@
     .footer-links a:hover,
     .mini-links a:hover {
       color: var(--accent);
+    }
+
+    .mobile-jump {
+      display: none;
     }
 
     .nav-cta,
@@ -258,6 +262,46 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 30px;
+    }
+
+    .trust-strip,
+    .focus-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .trust-strip {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 24px;
+    }
+
+    .trust-chip,
+    .focus-card {
+      padding: 18px 20px;
+      border: 1px solid rgba(127, 211, 255, 0.12);
+      border-radius: var(--radius-sm);
+      background: rgba(8, 22, 42, 0.54);
+      box-shadow: var(--glow);
+      backdrop-filter: blur(16px);
+    }
+
+    .trust-chip strong,
+    .focus-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 24px;
+    }
+
+    .focus-card a {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .hero-points {
@@ -602,7 +646,9 @@
       .proof-grid,
       .steps,
       .faq,
-      .stats {
+      .stats,
+      .focus-grid,
+      .trust-strip {
         grid-template-columns: 1fr;
       }
 
@@ -614,29 +660,81 @@
       .nav {
         flex-wrap: wrap;
       }
+
+      .hero-copy h1,
+      .section-intro h2,
+      .cta-copy h2,
+      .contact-card h2 {
+        max-width: none;
+      }
     }
 
     @media (max-width: 720px) {
+      .shell {
+        width: min(calc(100% - 20px), var(--max));
+      }
+
       .nav {
         flex-direction: column;
         align-items: stretch;
+        gap: 14px;
+        padding: 14px 0;
       }
 
       .nav-links {
         display: none;
       }
 
+      .mobile-jump {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 0 0 4px;
+        scrollbar-width: none;
+      }
+
+      .mobile-jump a {
+        white-space: nowrap;
+        padding: 10px 14px;
+        border: 1px solid rgba(127, 211, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(8, 23, 42, 0.5);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
       .hero {
-        padding-top: 44px;
+        padding-top: 34px;
       }
 
       .hero-actions {
         flex-direction: column;
       }
 
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 14vw, 4.2rem);
+        line-height: 0.98;
+      }
+
+      .hero-copy p,
+      .section-intro p,
+      .cta-copy p,
+      .contact-card p,
+      .proof p,
+      .section-card p,
+      .faq-item p {
+        font-size: 0.98rem;
+      }
+
       .button,
       .nav-cta {
         width: 100%;
+      }
+
+      .point,
+      .trust-chip,
+      .focus-card {
+        padding: 16px;
       }
 
       .hero-card,
@@ -649,6 +747,17 @@
       .legal-wrap,
       .point {
         border-radius: 20px;
+      }
+
+      .contact-card,
+      .form-card,
+      .cta-card,
+      .legal-wrap {
+        padding: 22px;
+      }
+
+      section {
+        padding: 30px 0;
       }
     }
   </style>
@@ -665,6 +774,12 @@
         <a href="https://nucleoplana.es/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
       </nav>
       <a href="#contacto" class="nav-cta">Solicitar diagnóstico</a>
+      <div class="mobile-jump" aria-label="Accesos rápidos">
+        <a href="#como-funciona">Método</a>
+        <a href="#focos">Soluciones</a>
+        <a href="/servicios/almacen-prl-vision-ia/">Almacén + PRL</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </div>
   </header>
 
@@ -678,6 +793,7 @@
           <div class="hero-actions">
             <a class="button button-primary" href="#contacto">Quiero un diagnóstico gratuito</a>
             <a class="button button-secondary" href="#casos">Ver ejemplos de impacto</a>
+            <a class="button button-secondary" href="/servicios/almacen-prl-vision-ia/">Ver solución para almacén + PRL</a>
           </div>
           <div class="hero-points">
             <div class="point">
@@ -712,6 +828,51 @@
             </div>
           </div>
         </aside>
+      </div>
+      <div class="shell trust-strip" aria-label="Señales de confianza">
+        <div class="trust-chip">
+          <strong>Diagnóstico sin compromiso</strong>
+          La primera conversación sirve para filtrar si merece la pena avanzar.
+        </div>
+        <div class="trust-chip">
+          <strong>Infraestructura reutilizable</strong>
+          Siempre que tiene sentido, partimos de cámaras y procesos ya existentes.
+        </div>
+        <div class="trust-chip">
+          <strong>Lectura ejecutiva clara</strong>
+          Datos, alertas y siguientes pasos explicados sin jerga innecesaria.
+        </div>
+        <div class="trust-chip">
+          <strong>Castellón y Valencia</strong>
+          Servicio pensado para pymes físicas con operativa real en territorio.
+        </div>
+      </div>
+    </section>
+
+    <section id="focos">
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Dónde encaja mejor</div>
+          <h2>Empieza por el frente que más dinero, tiempo o riesgo te está costando hoy.</h2>
+          <p>La propuesta no se vende igual a todos. Aquí tienes tres puertas de entrada claras para que cada pyme entienda rápido por dónde conviene empezar.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <strong>Comercio y alimentación</strong>
+            Merma, recorrido, exposición y decisiones de reposición con mejor lectura operativa.
+            <a href="#casos">Ver enfoque comercial →</a>
+          </article>
+          <article class="focus-card">
+            <strong>Almacén, PRL y circulación</strong>
+            Riesgos de colisión, EPIs, disciplina operativa y puntos ciegos en zonas de trabajo.
+            <a href="/servicios/almacen-prl-vision-ia/">Ir a la landing vertical →</a>
+          </article>
+          <article class="focus-card">
+            <strong>Compliance y subvenciones</strong>
+            Evidencias, alertas y documentación para no perder tiempo ni oportunidades por caos manual.
+            <a href="#contacto">Solicitar una revisión →</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -940,6 +1101,7 @@
       <p>Núcleo Plana ayuda a pymes físicas e industriales a reducir pérdidas, mejorar seguridad y ordenar cumplimiento mediante visión IA, automatización documental y simulación operativa antes de invertir.</p>
       <div class="footer-links">
         <a href="#como-funciona">Cómo funciona</a>
+        <a href="/servicios/almacen-prl-vision-ia/">Almacén + PRL</a>
         <a href="#casos">Casos reales</a>
         <a href="#faq">FAQ</a>
         <a href="/aviso-legal/">Aviso legal</a>
