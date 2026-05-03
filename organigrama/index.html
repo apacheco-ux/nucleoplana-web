@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Núcleo Plana | Organigrama operativo y departamentos IA</title>
+  <meta name="description" content="Visualiza cómo está organizado Núcleo Plana: dirección, captación, ventas, marketing, operación, subvenciones, I+D y autoridad coordinados como hub tecnológico.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nucleoplana.es/organigrama/">
+  <meta property="og:title" content="Núcleo Plana | Organigrama operativo y departamentos IA">
+  <meta property="og:description" content="La estructura completa de Núcleo Plana como hub tecnológico aplicado a pymes de Castellón y Valencia.">
+  <meta property="og:url" content="https://nucleoplana.es/organigrama/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07101c;
+      --paper: rgba(9, 23, 43, 0.8);
+      --paper-strong: rgba(11, 29, 54, 0.94);
+      --ink: #eef5ff;
+      --muted: #9fb4cf;
+      --brand: #58afff;
+      --accent: #90d6ff;
+      --line: rgba(127, 211, 255, 0.14);
+      --glow: 0 0 0 1px rgba(144, 214, 255, 0.05), 0 24px 64px rgba(3, 10, 20, 0.42);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1220px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(62, 166, 255, 0.24), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(87, 122, 255, 0.2), transparent 24%),
+        linear-gradient(180deg, #081321 0%, #07101c 60%, #040a14 100%);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(127, 211, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 211, 255, 0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 36%, transparent 85%);
+      opacity: 0.22;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(127, 211, 255, 0.1);
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 26, 0.78);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+    .brand {
+      font-family: "Fraunces", serif;
+      font-size: 1.06rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .brand span { color: var(--brand); }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a:hover, .footer-links a:hover { color: var(--accent); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(10, 133, 255, 0.16); }
+    .button-primary {
+      background: linear-gradient(135deg, #58afff 0%, #7bd7ff 100%);
+      color: #04111f;
+      box-shadow: 0 14px 30px rgba(62, 166, 255, 0.22);
+    }
+    .button-secondary {
+      border: 1px solid rgba(127, 211, 255, 0.14);
+      background: rgba(7, 20, 38, 0.42);
+      color: var(--ink);
+    }
+    section { padding: 38px 0; }
+    .hero {
+      padding-top: 76px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .eyebrow, .mini-label {
+      display: inline-flex;
+      width: fit-content;
+      padding: 9px 15px;
+      border: 1px solid rgba(127, 211, 255, 0.16);
+      border-radius: 999px;
+      background: rgba(8, 23, 42, 0.46);
+      color: var(--muted);
+      font-size: 0.88rem;
+      backdrop-filter: blur(12px);
+    }
+    .mini-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+    h1 { font-size: clamp(3rem, 5.6vw, 5.6rem); margin: 18px 0 16px; max-width: 10ch; }
+    h2 { font-size: clamp(2rem, 4vw, 3.4rem); margin-bottom: 16px; }
+    h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    p, li {
+      color: var(--muted);
+      line-height: 1.76;
+      margin: 0;
+    }
+    .hero p { max-width: 58ch; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .card, .panel, .layer-card, .urgent-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--glow);
+      backdrop-filter: blur(16px);
+    }
+    .panel {
+      padding: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(10, 28, 52, 0.96) 0%, rgba(8, 20, 39, 0.94) 100%);
+    }
+    .panel-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .panel-item {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(127, 211, 255, 0.1);
+    }
+    .panel-item strong, .card strong, .layer-card strong { display: block; margin-bottom: 8px; color: var(--ink); }
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+    .org-board {
+      display: grid;
+      gap: 18px;
+      position: relative;
+    }
+    .chief-card {
+      padding: 28px;
+      width: min(100%, 420px);
+      justify-self: center;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(13, 36, 64, 0.94), rgba(8, 20, 39, 0.94));
+    }
+    .chief-card::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 118px;
+      width: 1px;
+      height: 58px;
+      background: linear-gradient(180deg, rgba(127, 211, 255, 0.6), rgba(127, 211, 255, 0));
+      transform: translateX(-50%);
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      padding-top: 34px;
+    }
+    .pillar-grid::before {
+      content: "";
+      position: absolute;
+      left: 12.5%;
+      right: 12.5%;
+      top: 0;
+      height: 1px;
+      background: rgba(127, 211, 255, 0.26);
+    }
+    .pillar {
+      position: relative;
+      padding-top: 18px;
+    }
+    .pillar::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 18px;
+      transform: translateX(-50%);
+      background: rgba(127, 211, 255, 0.26);
+    }
+    .pillar-card {
+      padding: 22px;
+      min-height: 100%;
+    }
+    .departments {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .dept {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(127, 211, 255, 0.1);
+    }
+    .dept-title {
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .grid-3, .grid-4, .metrics-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .metrics-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .layer-card, .urgent-card, .card { padding: 24px; }
+    .urgent-card {
+      background: linear-gradient(180deg, rgba(13, 36, 64, 0.94), rgba(8, 20, 39, 0.94));
+    }
+    .list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+    }
+    .list li { margin-bottom: 8px; }
+    footer {
+      padding: 28px 0 42px;
+      border-top: 1px solid rgba(127, 211, 255, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      color: var(--muted);
+    }
+    @media (max-width: 1040px) {
+      .hero, .footer-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-4, .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (max-width: 760px) {
+      .shell { width: min(calc(100% - 18px), var(--max)); }
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links, .hero-actions { width: 100%; }
+      .hero-actions .button { width: 100%; }
+      .pillar-grid, .grid-3, .grid-4, .metrics-grid { grid-template-columns: 1fr; }
+      .chief-card::after, .pillar-grid::before, .pillar::before { display: none; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell">
+      <nav class="nav">
+        <a class="brand" href="https://nucleoplana.es/">Núcleo <span>Plana</span></a>
+        <div class="nav-links">
+          <a href="https://nucleoplana.es/">Inicio</a>
+          <a href="https://nucleoplana.es/hub-tecnologico/">Hub IA</a>
+          <a href="https://nucleoplana.es/blog/">Blog</a>
+          <a href="https://nucleoplana.es/#contacto">Contacto</a>
+        </div>
+        <a class="button button-primary" href="https://nucleoplana.es/#contacto">Solicitar diagnóstico</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Organigrama operativo y departamentos IA</span>
+        <h1>Así funciona Núcleo Plana por dentro.</h1>
+        <p>Núcleo Plana ya no es solo una web o una oferta de servicios. Está organizado como un sistema con dirección humana y departamentos IA que cubren captación, ventas, autoridad, entrega, subvenciones e I+D para construir un hub tecnológico real en la Comunidad Valenciana.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#organigrama">Ver organigrama</a>
+          <a class="button button-secondary" href="#emergencia">Junta de emergencia</a>
+        </div>
+      </div>
+      <aside class="panel">
+        <span class="mini-label">Resumen ejecutivo</span>
+        <div class="panel-list">
+          <div class="panel-item">
+            <strong>Dirección central</strong>
+            <p>Alejandro Pacheco decide prioridades, foco comercial y evolución del sistema.</p>
+          </div>
+          <div class="panel-item">
+            <strong>Cuatro pilares coordinados</strong>
+            <p>Captación, ventas, autoridad, entrega y producto trabajan como un mismo motor.</p>
+          </div>
+          <div class="panel-item">
+            <strong>Objetivo 2026</strong>
+            <p>Convertir Núcleo Plana en la mejor plataforma aplicada de IA operativa para pymes de Castellón y Valencia.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="organigrama">
+      <div class="section-intro">
+        <span class="mini-label">Organigrama</span>
+        <h2>Dirección, departamentos y capas de crecimiento.</h2>
+        <p>La estructura está pensada para que cada departamento produzca salidas accionables y no teoría. La web es el núcleo visible; las automatizaciones alimentan un backlog y la dirección humana fija las prioridades finales.</p>
+      </div>
+
+      <div class="org-board">
+        <article class="card chief-card">
+          <span class="mini-label">Dirección general</span>
+          <h3 style="font-size: 1.9rem; margin-top: 16px;">Alejandro Pacheco</h3>
+          <p>CEO, criterio estratégico y dirección final del sistema Núcleo Plana.</p>
+        </article>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <article class="card pillar-card">
+              <span class="mini-label">Pilar 1</span>
+              <h3>Captación y conversión</h3>
+              <p>La capa que atrae tráfico, mejora mensajes y convierte interés en diagnóstico.</p>
+              <div class="departments">
+                <div class="dept">
+                  <div class="dept-title">Web y CRO</div>
+                  <p>Convierte visitas en contactos, ordena UX, CTA, confianza y SEO on-page.</p>
+                </div>
+                <div class="dept">
+                  <div class="dept-title">Ventas y messaging</div>
+                  <p>Refina objeciones, secuencias, ofertas, guiones y cierres.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="pillar">
+            <article class="card pillar-card">
+              <span class="mini-label">Pilar 2</span>
+              <h3>Autoridad y demanda</h3>
+              <p>La capa que hace visible a Núcleo Plana y convierte criterio en demanda local.</p>
+              <div class="departments">
+                <div class="dept">
+                  <div class="dept-title">Marketing y demanda</div>
+                  <p>Genera campañas, backlog de captación, activos y calendario comercial.</p>
+                </div>
+                <div class="dept">
+                  <div class="dept-title">LinkedIn y autoridad</div>
+                  <p>Posiciona a Alejandro y conecta autoridad personal con la web y los verticales.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="pillar">
+            <article class="card pillar-card">
+              <span class="mini-label">Pilar 3</span>
+              <h3>Entrega y reputación</h3>
+              <p>La capa que transforma el discurso en servicios aplicables, sólidos y repetibles.</p>
+              <div class="departments">
+                <div class="dept">
+                  <div class="dept-title">Operación y entrega</div>
+                  <p>Diseña blueprints, checklists y despliegues en operación, PRL, visión y documentación.</p>
+                </div>
+                <div class="dept">
+                  <div class="dept-title">Subvenciones y partners</div>
+                  <p>Rastrea convocatorias, alianzas, ayuntamientos y acceso institucional.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="pillar">
+            <article class="card pillar-card">
+              <span class="mini-label">Pilar 4</span>
+              <h3>Producto y evolución</h3>
+              <p>La capa que convierte aprendizaje en activos, nuevas verticales y ventaja competitiva.</p>
+              <div class="departments">
+                <div class="dept">
+                  <div class="dept-title">I+D y producto</div>
+                  <p>Explora agentes, detecta nuevos nichos y convierte servicios en sistemas escalables.</p>
+                </div>
+                <div class="dept">
+                  <div class="dept-title">CEO Brief</div>
+                  <p>Sintetiza prioridades, backlog y decisiones para coordinar todo el sistema.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-intro">
+        <span class="mini-label">Capas de crecimiento</span>
+        <h2>Cómo fluye el trabajo entre departamentos.</h2>
+      </div>
+      <div class="grid-4">
+        <article class="layer-card">
+          <strong>Autoridad</strong>
+          <p>Web, blog, LinkedIn y presencia local posicionan a Núcleo Plana como criterio operativo, no como agencia genérica.</p>
+        </article>
+        <article class="layer-card">
+          <strong>Captación</strong>
+          <p>Verticales, WhatsApp, email, outreach y partners convierten visibilidad en conversaciones cualificadas.</p>
+        </article>
+        <article class="layer-card">
+          <strong>Conversión</strong>
+          <p>Diagnóstico, revisión operativa y propuesta modular transforman el interés en oportunidad real.</p>
+        </article>
+        <article class="layer-card">
+          <strong>Entrega y producto</strong>
+          <p>Implantación, reporting, automatización y playbooks elevan cada caso hacia un sistema repetible.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="emergencia">
+      <div class="section-intro">
+        <span class="mini-label">Junta directiva de emergencia</span>
+        <h2>Qué debe empujar Núcleo Plana si ahora mismo hace falta caja.</h2>
+        <p>Si el objetivo inmediato es generar dinero, la estructura no puede dispersarse. Cada departamento debe empujar los mismos tres resultados: conversaciones, diagnósticos y propuestas.</p>
+      </div>
+      <div class="grid-3">
+        <article class="urgent-card">
+          <strong>Frente 1: vender ya</strong>
+          <ul class="list">
+            <li>Priorizar verticales que cierran rápido: almacén, PRL, visión y compliance documental.</li>
+            <li>Usar WhatsApp, LinkedIn y red local para abrir conversaciones directas.</li>
+            <li>Empaquetar un diagnóstico pagable o una revisión operativa de entrada.</li>
+          </ul>
+        </article>
+        <article class="urgent-card">
+          <strong>Frente 2: autoridad útil</strong>
+          <ul class="list">
+            <li>Publicar criterio práctico, no contenido genérico.</li>
+            <li>Vincular cada post a una vertical o caso aplicable.</li>
+            <li>Usar la web como soporte de confianza para cerrar reuniones.</li>
+          </ul>
+        </article>
+        <article class="urgent-card">
+          <strong>Frente 3: pipeline institucional</strong>
+          <ul class="list">
+            <li>Mapear ayuntamientos, asociaciones, CIES y partners del entorno.</li>
+            <li>Vigilar subvenciones, programas y vías de colaboración.</li>
+            <li>Convertir relaciones locales en acceso comercial y reputacional.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-intro">
+        <span class="mini-label">Métricas</span>
+        <h2>Qué tiene que mirar la dirección cada semana.</h2>
+      </div>
+      <div class="metrics-grid">
+        <article class="card">
+          <strong>Leads semanales</strong>
+          <p>Cuántas conversaciones nuevas reales entran en el sistema.</p>
+        </article>
+        <article class="card">
+          <strong>Diagnósticos agendados</strong>
+          <p>Cuántos contactos pasan de interés a reunión concreta.</p>
+        </article>
+        <article class="card">
+          <strong>Propuestas enviadas</strong>
+          <p>Cuántos casos llegan a una oferta clara y accionable.</p>
+        </article>
+        <article class="card">
+          <strong>Tiempo de respuesta</strong>
+          <p>Qué tan rápido contesta el sistema una oportunidad.</p>
+        </article>
+        <article class="card">
+          <strong>Tráfico a verticales</strong>
+          <p>Qué páginas están atrayendo intención comercial útil.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <p>Núcleo Plana funciona como hub tecnológico aplicado a pymes físicas e industriales de Castellón y Valencia, coordinando dirección humana con departamentos IA orientados a crecimiento, entrega y producto.</p>
+      <div class="footer-links">
+        <a href="https://nucleoplana.es/aviso-legal/">Aviso legal</a>
+        <a href="https://nucleoplana.es/privacidad/">Privacidad</a>
+        <a href="https://nucleoplana.es/cookies/">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
