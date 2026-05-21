@@ -1,0 +1,72 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Video de presentación de Núcleo Plana</title>
+  <desc id="desc">Portada del video de Núcleo Plana con estética azul tecnológica, texto de presentación y botón de reproducción.</desc>
+  <defs>
+    <linearGradient id="bg" x1="148" y1="82" x2="1446" y2="859" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1830"/>
+      <stop offset="0.54" stop-color="#0D2446"/>
+      <stop offset="1" stop-color="#08111F"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(304 218) rotate(25.593) scale(352.396 283.07)">
+      <stop stop-color="#5AB5FF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#5AB5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1228 704) rotate(-147.308) scale(388.373 278.82)">
+      <stop stop-color="#7AD6FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#7AD6FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="1003" y1="170" x2="1458" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1E38"/>
+      <stop offset="1" stop-color="#0B1530"/>
+    </linearGradient>
+    <linearGradient id="play" x1="1134" y1="287" x2="1270" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#61B6FF"/>
+      <stop offset="1" stop-color="#88DEFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glowA)"/>
+  <rect width="1600" height="900" fill="url(#glowB)"/>
+  <g opacity="0.22">
+    <path d="M0 142H1600" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M0 364H1600" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M0 586H1600" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M0 808H1600" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M178 0V900" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M534 0V900" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M890 0V900" stroke="#7FD3FF" stroke-width="1"/>
+    <path d="M1246 0V900" stroke="#7FD3FF" stroke-width="1"/>
+  </g>
+  <rect x="116" y="120" width="436" height="56" rx="28" fill="#0B203A" stroke="#234667"/>
+  <text x="144" y="156" fill="#9FB8D3" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="500">
+    IA operativa y cumplimiento automatizado
+  </text>
+  <text x="116" y="328" fill="#EEF5FF" font-family="Georgia, 'Times New Roman', serif" font-size="116" font-weight="700">
+    <tspan x="116" dy="0">Núcleo Plana</tspan>
+    <tspan x="116" dy="110">en 90 segundos</tspan>
+  </text>
+  <text x="122" y="582" fill="#B5C8DE" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500">
+    Visión por computador, automatización documental y foco en
+  </text>
+  <text x="122" y="628" fill="#B5C8DE" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500">
+    pymes con operación física en Castellón y Valencia.
+  </text>
+  <rect x="982" y="152" width="472" height="596" rx="34" fill="url(#card)" stroke="#1B385A" stroke-width="2"/>
+  <circle cx="1218" cy="355" r="106" fill="#0A1730" stroke="#244A74" stroke-width="2"/>
+  <circle cx="1218" cy="355" r="74" fill="url(#play)"/>
+  <path d="M1200 315L1260 355L1200 395V315Z" fill="#07101C"/>
+  <rect x="1040" y="506" width="356" height="124" rx="26" fill="#142844" stroke="#244A74"/>
+  <text x="1076" y="560" fill="#EEF5FF" font-family="Manrope, Arial, sans-serif" font-size="32" font-weight="700">
+    Presentación visual
+  </text>
+  <text x="1076" y="608" fill="#B5C8DE" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="500">
+    Operación, compliance y
+  </text>
+  <text x="1076" y="642" fill="#B5C8DE" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="500">
+    tecnología aplicada al negocio real.
+  </text>
+  <rect x="118" y="714" width="338" height="72" rx="36" fill="#12294A" stroke="#295076"/>
+  <text x="154" y="759" fill="#88DEFF" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="700">
+    Dale al play para verlo
+  </text>
+</svg>
