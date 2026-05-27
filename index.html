@@ -3,18 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Núcleo Plana | IA operativa, compliance y visión para pymes</title>
-  <meta name="description" content="IA operativa, visión por computador y automatización documental para comercios, almacenes y pymes industriales en Castellón y Valencia. Diagnóstico inicial sin compromiso.">
+  <title>Núcleo Plana | Diagnóstico de IA operativa para pymes</title>
+  <meta name="description" content="Diagnóstico de IA operativa para pymes de Castellón y Valencia: merma, almacén, PRL, cumplimiento y automatización documental con una primera hipótesis en 20 minutos.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://nucleoplana.es/">
-  <meta property="og:title" content="Núcleo Plana | IA operativa, compliance y visión para pymes">
-  <meta property="og:description" content="IA operativa, visión por computador y automatización documental para comercios, almacenes y pymes industriales en Castellón y Valencia. Diagnóstico inicial sin compromiso.">
+  <meta property="og:title" content="Núcleo Plana | Diagnóstico de IA operativa para pymes">
+  <meta property="og:description" content="Diagnóstico de IA operativa para pymes de Castellón y Valencia: merma, almacén, PRL, cumplimiento y automatización documental con una primera hipótesis en 20 minutos.">
   <meta property="og:url" content="https://nucleoplana.es/">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Núcleo Plana",
+      "url": "https://nucleoplana.es/",
+      "email": "ceo@nucleoplana.es",
+      "telephone": "+34664588394",
+      "areaServed": ["Castellón", "Valencia"],
+      "description": "Diagnóstico de IA operativa para comercios, almacenes y pymes industriales de Castellón y Valencia con foco en merma, PRL, cumplimiento y automatización documental.",
+      "sameAs": [
+        "https://www.linkedin.com/in/alejandro-pacheco-ramos/",
+        "https://github.com/apacheco-ux"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Diagnóstico operativo inicial",
+          "description": "Revisión inicial de 20 minutos para detectar si una pyme puede reducir pérdidas, mejorar seguridad, ordenar cumplimiento o decidir mejor antes de invertir en tecnología."
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Esto invade la privacidad de mis clientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El enfoque está orientado a patrones operativos y estadísticos, no a identificar personas. No se utiliza reconocimiento facial y la solución debe implantarse con información visible y criterios compatibles con RGPD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo sé si me compensa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de si el negocio pierde valor por ineficiencia, merma, seguridad, falta de trazabilidad o decisiones tomadas sin visibilidad suficiente. El diagnóstico inicial sirve para cuantificarlo antes de implantar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que cambiar todo mi software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No necesariamente. La propuesta está pensada para integrarse sobre cámaras, hojas, procesos y herramientas ya existentes cuando tenga sentido."
+          }
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #07101c;
@@ -262,6 +317,14 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 30px;
+    }
+
+    .hero-reassurance {
+      max-width: 680px;
+      margin: 14px 0 0;
+      color: #c9ddf2;
+      font-size: 0.98rem;
+      line-height: 1.62;
     }
 
     .trust-strip,
@@ -583,6 +646,44 @@
       gap: 16px;
     }
 
+    .form-intro {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(127, 211, 255, 0.14);
+    }
+
+    .form-intro strong {
+      display: block;
+      font-size: 1.04rem;
+    }
+
+    .form-intro p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .form-checks {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #d3e9ff;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .form-checks li::before {
+      content: "✓";
+      margin-right: 8px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
     .field-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -854,18 +955,19 @@
           <h1>Convierte cámaras, datos y normativa en decisiones útiles para tu pyme.</h1>
           <p>Núcleo Plana combina visión por computador, agentes de automatización y simulación operativa para ayudar a comercios, almacenes y pymes industriales a reducir pérdidas, mejorar seguridad y anticipar decisiones sin añadir más complejidad.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contacto">Quiero un diagnóstico gratuito</a>
+            <a class="button button-primary" href="#contacto">Pedir diagnóstico de 20 min</a>
             <a class="button button-secondary" href="#casos">Ver ejemplos de impacto</a>
             <a class="button button-secondary" href="/servicios/almacen-prl-vision-ia/">Ver solución para almacén + PRL</a>
           </div>
+          <p class="hero-reassurance">Sin reunión comercial larga: te decimos si hay encaje, qué frente priorizar y qué dato faltaría para calcular retorno.</p>
           <div class="hero-points">
             <div class="point">
               <strong>72h</strong>
               Puesta en marcha rápida sobre operativa ya existente.
             </div>
             <div class="point">
-              <strong>250+</strong>
-              Servicio modular según operación, riesgo y objetivos.
+              <strong>4 frentes</strong>
+              Merma, seguridad, cumplimiento y decisiones antes de invertir.
             </div>
             <div class="point">
               <strong>RGPD</strong>
@@ -874,20 +976,20 @@
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Resumen del servicio">
-          <div class="mini-label">Tres capas de valor</div>
+        <aside class="hero-card" aria-label="Qué incluye el diagnóstico inicial">
+          <div class="mini-label">Diagnóstico inicial</div>
           <div class="score">
             <div class="score-box">
-              <strong>Operación y seguridad</strong>
-              Detecta fricción operativa, riesgos en almacén, uso incorrecto de EPIs, cuellos de botella y patrones que hacen perder margen o tiempo.
+              <strong>En 20 minutos saldrás con un siguiente paso claro</strong>
+              Revisamos si el problema principal está en merma, seguridad, cumplimiento, trazabilidad o decisión antes de plantear tecnología.
             </div>
             <div class="score-box">
-              <strong>Compliance y ayudas</strong>
-              Agentes que ordenan evidencias, preparan alertas normativas y ayudan a no perder subvenciones, documentación o trazabilidad crítica.
+              <strong>Sin compromiso ni auditoría pesada</strong>
+              Si no hay encaje, lo decimos. Si lo hay, priorizamos una primera prueba útil sobre infraestructura y procesos ya existentes.
             </div>
             <div class="score-box">
-              <strong>Simulación antes de invertir</strong>
-              Modelos sencillos para estimar impacto financiero y operativo antes de cambiar procesos, comprar equipo o escalar una mejora.
+              <strong>Respuesta útil para dirección</strong>
+              Te llevas una hipótesis de retorno, el riesgo a vigilar y la vertical más lógica para empezar: tienda, almacén, compliance o simulación.
             </div>
           </div>
         </aside>
@@ -895,19 +997,19 @@
       <div class="shell trust-strip" aria-label="Señales de confianza">
         <div class="trust-chip">
           <strong>Diagnóstico sin compromiso</strong>
-          La primera conversación sirve para filtrar si merece la pena avanzar.
+          Sales con una hipótesis de retorno, no con una demo genérica.
         </div>
         <div class="trust-chip">
           <strong>Infraestructura reutilizable</strong>
           Siempre que tiene sentido, partimos de cámaras y procesos ya existentes.
         </div>
         <div class="trust-chip">
-          <strong>Lectura ejecutiva clara</strong>
-          Datos, alertas y siguientes pasos explicados sin jerga innecesaria.
+          <strong>Sin reconocimiento facial</strong>
+          Lectura operativa compatible con RGPD y enfocada a patrones, no a identificar personas.
         </div>
         <div class="trust-chip">
-          <strong>Castellón y Valencia</strong>
-          Servicio pensado para pymes físicas con operativa real en territorio.
+          <strong>Respuesta en 24h laborables</strong>
+          Primer filtro rápido por WhatsApp, email o formulario.
         </div>
       </div>
     </section>
@@ -1138,6 +1240,7 @@
             <a href="/aviso-legal/">Aviso legal</a>
             <a href="/privacidad/">Privacidad</a>
             <a href="/cookies/">Cookies</a>
+            <a href="/servicios/comercio-alimentacion/">IA para comercio y alimentación</a>
           </div>
         </article>
 
@@ -1148,6 +1251,15 @@
               <label>No rellenar este campo
                 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
               </label>
+            </div>
+            <div class="form-intro" aria-label="Qué incluye la revisión inicial">
+              <strong>En la revisión inicial no vendemos una instalación: filtramos si hay retorno.</strong>
+              <p>Con tus respuestas preparamos una primera hipótesis para saber si conviene empezar por merma, seguridad, cumplimiento o simulación.</p>
+              <ul class="form-checks">
+                <li>Primer diagnóstico de 20 minutos, sin compromiso.</li>
+                <li>Respuesta orientativa en menos de 24 horas laborables.</li>
+                <li>Sin reconocimiento facial ni tratamiento innecesario de datos.</li>
+              </ul>
             </div>
             <div class="field-grid">
               <label>
