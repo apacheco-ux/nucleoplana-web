@@ -87,6 +87,36 @@
       }
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Diagnóstico de IA operativa para pymes",
+      "serviceType": "Diagnóstico operativo con IA, visión computacional y automatización documental",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Núcleo Plana",
+        "url": "https://nucleoplana.es/",
+        "telephone": "+34664588394",
+        "email": "ceo@nucleoplana.es"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Castellón"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Valencia"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "pymes físicas, comercios, almacenes y empresas industriales"
+      },
+      "description": "Revisión inicial para detectar si una pyme puede reducir merma, mejorar seguridad, ordenar cumplimiento o tomar mejores decisiones antes de invertir en tecnología."
+    }
+  </script>
   <style>
     :root {
       --bg: #07101c;
@@ -308,7 +338,7 @@
     }
 
     .hero-copy h1 {
-      max-width: 10ch;
+      max-width: 12.5ch;
       font-family: "Fraunces", serif;
       font-size: clamp(3rem, 5.5vw, 5.7rem);
       font-weight: 700;
@@ -342,6 +372,31 @@
       color: #c9ddf2;
       font-size: 0.98rem;
       line-height: 1.62;
+    }
+
+    .diagnostic-outcome {
+      display: grid;
+      gap: 10px;
+      max-width: 680px;
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid rgba(144, 214, 255, 0.16);
+      border-radius: var(--radius-sm);
+      background: rgba(7, 19, 35, 0.72);
+      box-shadow: var(--glow);
+    }
+
+    .diagnostic-outcome strong {
+      color: var(--ink);
+    }
+
+    .diagnostic-outcome ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.55;
     }
 
     .trust-strip,
@@ -653,6 +708,24 @@
       margin-top: 18px;
     }
 
+    .contact-trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-trust span {
+      min-height: 72px;
+      padding: 14px;
+      border: 1px solid rgba(127, 211, 255, 0.12);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #d3e9ff;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
     .mini-links {
       margin-top: 18px;
       font-size: 0.95rem;
@@ -705,6 +778,10 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
+    }
+
+    .field-wide {
+      grid-column: 1 / -1;
     }
 
     label {
@@ -909,6 +986,10 @@
         padding: 16px;
       }
 
+      .contact-trust {
+        grid-template-columns: 1fr;
+      }
+
       .hero-card,
       .section-card,
       .proof,
@@ -969,7 +1050,7 @@
       <div class="shell hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">IA operativa y cumplimiento automatizado · Castellón y Valencia</div>
-          <h1>Convierte cámaras, datos y normativa en decisiones útiles para tu pyme.</h1>
+          <h1>IA operativa para pymes: convierte cámaras, datos y normativa en decisiones útiles.</h1>
           <p>Núcleo Plana combina visión por computador, agentes de automatización y simulación operativa para ayudar a comercios, almacenes y pymes industriales a reducir pérdidas, mejorar seguridad y anticipar decisiones sin añadir más complejidad.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contacto">Pedir diagnóstico de 20 min</a>
@@ -977,6 +1058,14 @@
             <a class="button button-secondary" href="/servicios/almacen-prl-vision-ia/">Ver solución para almacén + PRL</a>
           </div>
           <p class="hero-reassurance">Sin reunión comercial larga: te decimos si hay encaje, qué frente priorizar y qué dato faltaría para calcular retorno.</p>
+          <div class="diagnostic-outcome" aria-label="Resultado del diagnóstico inicial">
+            <strong>Qué recibes tras el diagnóstico de 20 minutos</strong>
+            <ul>
+              <li>Una hipótesis de retorno priorizada: merma, PRL, cumplimiento o decisión.</li>
+              <li>El primer dato que falta para saber si merece la pena invertir.</li>
+              <li>Un siguiente paso claro: piloto, revisión documental o no avanzar todavía.</li>
+            </ul>
+          </div>
           <div class="hero-points">
             <div class="point">
               <strong>72h</strong>
@@ -1253,6 +1342,11 @@
             <div><strong>Zona de trabajo:</strong> Castellón y Valencia</div>
             <div><strong>Atención inicial:</strong> respuesta orientativa en menos de 24 horas laborables</div>
           </div>
+          <div class="contact-trust" aria-label="Garantías de la primera revisión">
+            <span><strong>Sin compromiso.</strong><br>Primero confirmamos si hay retorno real.</span>
+            <span><strong>Sin reconocimiento facial.</strong><br>Solo patrones operativos y evidencias útiles.</span>
+            <span><strong>Salida concreta.</strong><br>Hipótesis, prioridad y siguiente paso recomendado.</span>
+          </div>
           <div class="mini-links">
             <a href="/aviso-legal/">Aviso legal</a>
             <a href="/privacidad/">Privacidad</a>
@@ -1304,6 +1398,17 @@
                   <option>Moda o retail especializado</option>
                   <option>Almacén o pyme industrial</option>
                   <option>Otro negocio físico</option>
+                </select>
+              </label>
+              <label class="field-wide">
+                Prioridad actual
+                <select name="prioridad" required>
+                  <option value="">Selecciona una prioridad</option>
+                  <option>Reducir merma o pérdida de margen</option>
+                  <option>Mejorar seguridad, PRL o circulación</option>
+                  <option>Ordenar documentación, ayudas o cumplimiento</option>
+                  <option>Decidir si una inversión merece la pena</option>
+                  <option>No lo tengo claro todavía</option>
                 </select>
               </label>
             </div>
@@ -1358,6 +1463,7 @@
           `Telefono: ${get('telefono')}`,
           `Email: ${get('email')}`,
           `Tipo de negocio: ${get('sector')}`,
+          `Prioridad actual: ${get('prioridad')}`,
           `Mensaje: ${get('mensaje')}`
         ].join('\n');
         window.open(`https://wa.me/34664588394?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
