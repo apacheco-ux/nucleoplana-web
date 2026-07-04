@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Núcleo Plana | Ayuntamientos, asociaciones y partners</title>
+  <meta name="description" content="Núcleo Plana abre una capa institucional para ayuntamientos, asociaciones y partners que quieran activar diagnósticos, pilotos y programas de digitalización aplicada para pymes de Castellón y Valencia.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://nucleoplana.es/institucional/">
+  <meta property="og:title" content="Núcleo Plana | Ayuntamientos, asociaciones y partners">
+  <meta property="og:description" content="Colaboraciones, pilotos y programas para acercar IA operativa, compliance útil y digitalización aplicada a pymes reales.">
+  <meta property="og:url" content="https://nucleoplana.es/institucional/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07101c;
+      --paper: rgba(9, 23, 43, 0.8);
+      --paper-strong: rgba(11, 29, 54, 0.94);
+      --ink: #eef5ff;
+      --muted: #9fb4cf;
+      --brand: #58afff;
+      --accent: #90d6ff;
+      --glow: 0 0 0 1px rgba(144, 214, 255, 0.05), 0 24px 64px rgba(3, 10, 20, 0.42);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(62, 166, 255, 0.24), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(87, 122, 255, 0.2), transparent 24%),
+        linear-gradient(180deg, #081321 0%, #07101c 60%, #040a14 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(127, 211, 255, 0.1);
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 26, 0.78);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; }
+    .brand { font-family: "Fraunces", serif; font-size: 1.06rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .brand span { color: var(--brand); }
+    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 0.94rem; }
+    .nav-links a:hover, .footer-links a:hover { color: var(--accent); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 14px 24px; border-radius: 999px; font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(10, 133, 255, 0.16); }
+    .button-primary { background: linear-gradient(135deg, #58afff 0%, #7bd7ff 100%); color: #04111f; box-shadow: 0 14px 30px rgba(62, 166, 255, 0.22); }
+    .button-secondary { border: 1px solid rgba(127, 211, 255, 0.14); background: rgba(7, 20, 38, 0.42); color: var(--ink); }
+    .hero { padding: 76px 0 34px; }
+    .hero-grid, .grid-3, .contact-grid, .footer-grid { display: grid; gap: 20px; }
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; gap: 36px; }
+    .eyebrow, .mini-label {
+      display: inline-flex; width: fit-content; padding: 9px 15px; border: 1px solid rgba(127, 211, 255, 0.16); border-radius: 999px;
+      background: rgba(8, 23, 42, 0.46); color: var(--muted); font-size: 0.88rem; backdrop-filter: blur(12px);
+    }
+    .mini-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .hero-copy h1, .section-intro h2, .contact-card h2 {
+      margin: 18px 0 16px; font-family: "Fraunces", serif; line-height: 0.96; letter-spacing: -0.04em;
+    }
+    .hero-copy h1 { max-width: 12ch; font-size: clamp(2.9rem, 5.3vw, 5.3rem); }
+    .hero-copy p, .section-intro p, .card p, .panel p, .contact-card p {
+      margin: 0; color: var(--muted); line-height: 1.76;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .card, .panel, .contact-card, .form-card {
+      border: 1px solid rgba(127, 211, 255, 0.12); border-radius: var(--radius); background: var(--paper); box-shadow: var(--glow); backdrop-filter: blur(16px);
+    }
+    .panel {
+      padding: 30px;
+      background: radial-gradient(circle at top right, rgba(95, 225, 255, 0.12), transparent 34%), linear-gradient(180deg, rgba(10, 28, 52, 0.96) 0%, rgba(8, 20, 39, 0.94) 100%);
+    }
+    .panel-list { display: grid; gap: 14px; margin-top: 10px; }
+    .panel-item {
+      padding: 18px; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(127, 211, 255, 0.1);
+    }
+    .panel-item strong, .card strong { display: block; margin-bottom: 8px; color: var(--ink); }
+    section { padding: 36px 0; }
+    .section-intro { max-width: 780px; margin-bottom: 24px; }
+    .section-intro h2, .contact-card h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { padding: 28px; background: rgba(8, 27, 48, 0.62); }
+    .card h3 { margin: 0 0 12px; font-family: "Fraunces", serif; font-size: 1.18rem; line-height: 1.2; }
+    .contact-grid { grid-template-columns: 0.92fr 1.08fr; align-items: start; }
+    .contact-card, .form-card { padding: 28px; }
+    .contact-list, .mini-links, .footer-links { display: flex; flex-wrap: wrap; gap: 14px 18px; color: var(--muted); }
+    .contact-list { flex-direction: column; gap: 10px; margin-top: 18px; }
+    .mini-links { margin-top: 18px; }
+    form { display: grid; gap: 16px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    label { display: grid; gap: 8px; font-size: 0.96rem; color: var(--ink); }
+    input, select, textarea {
+      width: 100%; padding: 14px 16px; border: 1px solid rgba(127, 211, 255, 0.18); border-radius: 14px; background: var(--paper-strong); color: var(--ink); font: inherit;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .consent {
+      display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(127, 211, 255, 0.12); color: var(--muted); line-height: 1.6; font-size: 0.92rem;
+    }
+    .consent input { width: auto; margin-top: 4px; padding: 0; }
+    footer { padding: 28px 0 42px; }
+    .footer-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+    .footer-grid p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .footer-links { justify-content: flex-end; }
+    @media (max-width: 960px) {
+      .hero-grid, .grid-3, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      .nav { flex-direction: column; align-items: stretch; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+      .hero-copy h1 { font-size: clamp(2.45rem, 14vw, 4.1rem); max-width: none; }
+      .panel, .card, .contact-card, .form-card { padding: 22px; border-radius: 20px; }
+      section { padding: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a href="/" class="brand">Núcleo <span>Plana</span></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/">Home</a>
+        <a href="/hub-tecnologico/">Hub IA</a>
+        <a href="/servicios/comercio-alimentacion/">Retail + merma</a>
+        <a href="/servicios/compliance-subvenciones-documentacion/">Compliance</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="button button-primary">Explorar colaboración</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Comunidad Valenciana · Ayuntamientos · Asociaciones · Partners</div>
+          <h1>Una capa institucional para activar digitalización aplicada con criterio territorial.</h1>
+          <p>Núcleo Plana abre un frente de colaboración con ayuntamientos, asociaciones empresariales, entidades de desarrollo local y partners que quieran acercar IA operativa, cumplimiento útil y pilotos concretos a pymes reales de Castellón y Valencia.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacto">Quiero explorar una colaboración</a>
+            <a class="button button-secondary" href="/hub-tecnologico/">Ver hub tecnológico</a>
+            <a class="button button-secondary" href="/servicios/compliance-subvenciones-documentacion/">Ver vertical compliance</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Para quién es esta capa">
+          <div class="mini-label">Donde encaja</div>
+          <div class="panel-list">
+            <div class="panel-item">
+              <strong>Ayuntamientos y agencias locales</strong>
+              Programas de apoyo a pyme, comercio, empleo, modernización y acompañamiento a tejido productivo.
+            </div>
+            <div class="panel-item">
+              <strong>Asociaciones y clusters</strong>
+              Acciones sectoriales para retail, alimentación, logística, industria y negocio de proximidad.
+            </div>
+            <div class="panel-item">
+              <strong>Partners técnicos o consultivos</strong>
+              Despachos, consultoras, integradores, agentes digitalizadores y colaboradores con acceso a empresa real.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Que podemos activar</div>
+          <h2>No se trata de vender herramientas. Se trata de crear programas y pilotos defendibles.</h2>
+          <p>La capa institucional tiene sentido cuando hay necesidad de aterrizar digitalización, orden documental, seguridad operativa o mejora comercial sin caer en discursos genéricos ni proyectos inflados.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <strong>Diagnósticos y sesiones</strong>
+            <h3>Lectura inicial de tejido pyme</h3>
+            <p>Sesiones, talleres o diagnósticos para detectar fricciones operativas, oportunidades de cumplimiento y posibles pilotos de 30 días.</p>
+          </article>
+          <article class="card">
+            <strong>Pilotos aplicados</strong>
+            <h3>Programas pequeños con resultado visible</h3>
+            <p>Pilotos de retail y merma, compliance documental, almacén y operación que dejan una decisión mejor tomada y un caso reutilizable.</p>
+          </article>
+          <article class="card">
+            <strong>Backlog territorial</strong>
+            <h3>Mapa de oportunidades y partners</h3>
+            <p>Convocatorias, ecosistema, asociaciones y aliados que pueden ampliar alcance sin perder precisión local.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Formas de colaboración</div>
+          <h2>La colaboración puede empezar por formación, piloto o programa compartido.</h2>
+          <p>Lo importante es que cada iniciativa tenga foco, evidencia y un siguiente paso claro para las empresas participantes.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Sesión o jornada sectorial</h3>
+            <p>Formato de sensibilización práctica para explicar dónde encaja la IA operativa, qué no merece automatización y qué sí puede abrir mejora real.</p>
+          </article>
+          <article class="card">
+            <h3>Piloto con empresas</h3>
+            <p>Selección de uno o varios casos para validar retail y merma, orden documental o lectura operativa con resultados visibles a corto plazo.</p>
+          </article>
+          <article class="card">
+            <h3>Partner estratégico</h3>
+            <p>Colaboración con entidades que ya tienen canal, confianza o capilaridad local para construir una oferta más útil y más aterrizada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-intro">
+          <div class="mini-label">Donde conecta</div>
+          <h2>Esta capa institucional enlaza directamente con las verticales y el motor público del hub.</h2>
+          <p>La autoridad no vive separada de la entrega. Los aprendizajes de retail y merma, compliance o almacén alimentan contenido, prueba social y nuevas colaboraciones.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <strong>Retail + merma</strong>
+            <p>Comercio físico, alimentación y negocio local con presión sobre rotación, exposición y margen.</p>
+            <p><a href="/servicios/comercio-alimentacion/" style="color:var(--accent);font-weight:700;">Ver vertical →</a></p>
+          </article>
+          <article class="card">
+            <strong>Compliance + subvenciones</strong>
+            <p>Orden documental, alertas útiles y trazabilidad para no perder tiempo, ayudas ni foco.</p>
+            <p><a href="/servicios/compliance-subvenciones-documentacion/" style="color:var(--accent);font-weight:700;">Ver vertical →</a></p>
+          </article>
+          <article class="card">
+            <strong>Hub tecnológico</strong>
+            <p>La estructura completa donde se coordinan autoridad, verticales, partners y delivery aplicado.</p>
+            <p><a href="/hub-tecnologico/" style="color:var(--accent);font-weight:700;">Ver hub →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="shell contact-grid">
+        <article class="contact-card">
+          <div class="mini-label">Contacto</div>
+          <h2>Si quieres estudiar una colaboración institucional o sectorial, empecemos por una conversación útil.</h2>
+          <p>La primera conversación sirve para entender si encaja mejor una jornada, un piloto, una mesa de trabajo o una colaboración de partner sobre territorio, pyme o sector.</p>
+          <div class="contact-list">
+            <div><strong>Email:</strong> <a href="mailto:ceo@nucleoplana.es">ceo@nucleoplana.es</a></div>
+            <div><strong>WhatsApp:</strong> <a href="https://wa.me/34664588394?text=Hola,%20quiero%20explorar%20una%20colaboracion%20institucional%20con%20Nucleo%20Plana" target="_blank" rel="noopener noreferrer">+34 664 58 83 94</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alejandro-pacheco-ramos/" target="_blank" rel="noopener noreferrer">alejandro-pacheco-ramos</a></div>
+            <div><strong>GitHub:</strong> <a href="https://github.com/apacheco-ux" target="_blank" rel="noopener noreferrer">apacheco-ux</a></div>
+            <div><strong>Ámbito:</strong> Castellón, Valencia y Comunidad Valenciana</div>
+          </div>
+          <div class="mini-links">
+            <a href="/aviso-legal/">Aviso legal</a>
+            <a href="/privacidad/">Privacidad</a>
+            <a href="/cookies/">Cookies</a>
+          </div>
+        </article>
+
+        <article class="form-card">
+          <form action="https://formspree.io/f/xkovlyja" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="_subject" value="Nueva solicitud desde institucional">
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label>No rellenar este campo
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Nombre y apellidos
+                <input type="text" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
+              </label>
+              <label>
+                Teléfono
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel" required>
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="tuemail@entidad.com" autocomplete="email" required>
+              </label>
+              <label>
+                Tipo de entidad
+                <select name="sector" required>
+                  <option value="">Selecciona una opción</option>
+                  <option>Ayuntamiento</option>
+                  <option>Agencia o entidad pública</option>
+                  <option>Asociación empresarial</option>
+                  <option>Cluster o agrupación sectorial</option>
+                  <option>Despacho o consultora</option>
+                  <option>Partner técnico</option>
+                  <option>Otro</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              ¿Qué tipo de colaboración quieres explorar?
+              <textarea name="mensaje" placeholder="Ejemplo: queremos estudiar una jornada, un piloto sectorial, una colaboración para pymes locales o una capa de apoyo en subvenciones y digitalización aplicada." required></textarea>
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consentimiento" required>
+              <span>He leído y acepto la <a href="/privacidad/"><strong>Política de Privacidad</strong></a>. Autorizo el tratamiento de mis datos para recibir respuesta sobre esta solicitud.</span>
+            </label>
+            <button class="button button-primary" type="submit">Solicitar conversación inicial</button>
+            <button class="button button-secondary whatsapp-submit" type="button" data-wa-context="Capa institucional">Enviar por WhatsApp</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <p>Núcleo Plana activa una capa institucional para conectar tecnología aplicada, colaboraciones locales y pilotos útiles con pymes reales de la Comunidad Valenciana.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/hub-tecnologico/">Hub IA</a>
+        <a href="/servicios/comercio-alimentacion/">Retail + merma</a>
+        <a href="/servicios/compliance-subvenciones-documentacion/">Compliance</a>
+        <a href="https://www.linkedin.com/in/alejandro-pacheco-ramos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="/privacidad/">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const button = document.querySelector('.whatsapp-submit');
+      if (!button) return;
+      const form = button.closest('form');
+      if (!form) return;
+      button.addEventListener('click', () => {
+        if (!form.reportValidity()) return;
+        const get = (name) => form.querySelector(`[name="${name}"]`)?.value.trim() || '';
+        const text = [
+          'Nueva solicitud desde Nucleo Plana',
+          `Contexto: ${button.dataset.waContext || 'Web Nucleo Plana'}`,
+          `Nombre: ${get('nombre')}`,
+          `Telefono: ${get('telefono')}`,
+          `Email: ${get('email')}`,
+          `Tipo de entidad: ${get('sector')}`,
+          `Mensaje: ${get('mensaje')}`
+        ].join('\n');
+        window.open(`https://wa.me/34664588394?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+      });
+    })();
+  </script>
+</body>
+</html>

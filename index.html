@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Núcleo Plana | IA operativa para pymes en Castellón y Valencia</title>
-  <meta name="description" content="Diagnóstico de IA operativa para pymes de Castellón y Valencia: merma, almacén, PRL, cumplimiento y automatización documental con una primera hipótesis en 20 minutos.">
+  <meta name="description" content="Diagnóstico de IA operativa para pymes en Castellón y Valencia: reduce merma, riesgos de almacén, tareas manuales y dudas de inversión con una primera hipótesis en 20 minutos.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://nucleoplana.es/">
   <meta property="og:title" content="Núcleo Plana | IA operativa para pymes en Castellón y Valencia">
-  <meta property="og:description" content="Diagnóstico de IA operativa para pymes de Castellón y Valencia: merma, almacén, PRL, cumplimiento y automatización documental con una primera hipótesis en 20 minutos.">
+  <meta property="og:description" content="Diagnóstico de IA operativa para pymes en Castellón y Valencia: reduce merma, riesgos de almacén, tareas manuales y dudas de inversión con una primera hipótesis en 20 minutos.">
   <meta property="og:url" content="https://nucleoplana.es/">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +65,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Recibes una hipótesis de retorno priorizada, el dato mínimo que falta para validarla y una recomendación clara: hacer piloto, revisar documentación o no avanzar todavía."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito tener cámaras o datos preparados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Para el primer filtro basta con explicar el problema y compartir una evidencia sencilla si existe: porcentaje aproximado de merma, fotos del lineal, incidencias de almacén, documentación pendiente o una decisión de inversión que quieras validar."
           }
         },
         {
@@ -852,6 +860,12 @@
       color: var(--ink);
     }
 
+    .optional-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
     input,
     select,
     textarea {
@@ -1115,8 +1129,8 @@
       <div class="shell hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">IA operativa y cumplimiento automatizado · Castellón y Valencia</div>
-          <h1>IA operativa para pymes: convierte cámaras, datos y normativa en decisiones útiles.</h1>
-          <p>Núcleo Plana combina visión por computador, agentes de automatización y simulación operativa para ayudar a comercios, almacenes y pymes industriales a reducir pérdidas, mejorar seguridad y anticipar decisiones sin añadir más complejidad.</p>
+          <h1>Reduce merma, riesgos y tareas manuales con IA operativa para pymes.</h1>
+          <p>Núcleo Plana combina visión por computador, agentes de automatización y simulación operativa para que comercios, almacenes y pymes industriales de Castellón y Valencia sepan dónde pierden margen, qué riesgo priorizar y qué inversión merece la pena.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contacto">Recibir hipótesis en 24h</a>
             <a class="button button-secondary" href="https://wa.me/34664588394?text=Hola,%20quiero%20un%20primer%20filtro%20de%2020%20minutos%20para%20ver%20si%20N%C3%BAcleo%20Plana%20encaja%20con%20mi%20pyme" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
@@ -1346,6 +1360,10 @@
             <p>Una hipótesis de retorno priorizada, el dato mínimo que falta para validarla y una recomendación clara: hacer piloto, revisar documentación o no avanzar todavía. La conversación debe ayudarte a decidir, no a sentarte en otra demo genérica.</p>
           </article>
           <article class="faq-item">
+            <h3>¿Necesito tener cámaras o datos preparados?</h3>
+            <p>No. Para el primer filtro basta con explicar el problema y compartir una evidencia sencilla si existe: porcentaje aproximado de merma, fotos del lineal, incidencias de almacén, documentación pendiente o una decisión de inversión que quieras validar.</p>
+          </article>
+          <article class="faq-item">
             <h3>¿Cuánto tardáis en responder?</h3>
             <p>La respuesta inicial llega normalmente en menos de 24 horas laborables por WhatsApp o email. El objetivo es filtrar rápido si hay encaje antes de plantear una reunión más larga.</p>
           </article>
@@ -1454,8 +1472,8 @@
                 <input type="text" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
               </label>
               <label>
-                Teléfono
-                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel" required>
+                Teléfono / WhatsApp <span class="optional-label">opcional</span>
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" inputmode="tel">
               </label>
             </div>
             <div class="field-grid">
@@ -1501,7 +1519,7 @@
               <span>He leído y acepto la <a href="/privacidad/"><strong>Política de Privacidad</strong></a>. Autorizo el tratamiento de mis datos para recibir respuesta sobre mi solicitud de diagnóstico.</span>
             </label>
             <button class="button button-primary" type="submit">Recibir hipótesis en 24h</button>
-            <p class="footnote">Las solicitudes enviadas desde este formulario llegan a tu canal actual de Formspree. El bloque legal queda visible para que no se capten datos sin consentimiento expreso.</p>
+            <p class="footnote">Usaremos tus datos solo para responder a esta solicitud de diagnostico. Si el caso no encaja, te lo diremos sin forzar una reunion comercial.</p>
             <button class="button button-secondary whatsapp-submit" type="button" data-wa-context="Home general de Nucleo Plana">Enviar por WhatsApp</button>
           </form>
         </article>
